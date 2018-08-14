@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
         AwayTeamID: DataTypes.INTEGER,
         AwayAbvr: DataTypes.STRING,
         PlayedStatus: DataTypes.STRING,
-        ExtGameID: DataTypes.INTEGER
+        ExtGameIDString: DataTypes.STRING,
+        ExtID: DataTypes.INTEGER
     });
 
     return Game;
