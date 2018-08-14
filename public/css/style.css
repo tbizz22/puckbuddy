@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+.page-footer {
+    background-color: darkgray;
+}
+
+.navbar-fixed .nav-wrapper {
+    background-color: #ffffff;
+    
+    
+}
+
+
+.fontNunito {
+    font-family: 'Nunito Sans', sans-serif;
+    color:black;
+    font-weight: 300;
+    opacity: 1;
+}
+
+
+.mh {
+    max-height: 300px;
+}
+
+.eaten {
+    text-decoration: line-through;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.ml10{
+    margin-left: 10px;
+}
