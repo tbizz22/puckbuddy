@@ -33,7 +33,7 @@ module.exports = function (app) {
             if (!error && response.statusCode == 200) {
 
                 var sched = JSON.parse(body);
-
+                var resJson = [];
                 for (var i = 0; i < sched.games.length; i++) {
 
                     var homeID = sched.games[i].schedule.homeTeam.id;
@@ -47,7 +47,6 @@ module.exports = function (app) {
                     var PlayedStatus = sched.games[i].schedule.playedStatus;
 
 
-
                     db.Game.create({
                         StartTime: startTime,
                         Venue: arena,
@@ -59,12 +58,12 @@ module.exports = function (app) {
                         ExtGameIDString: ExtgameIDString,
                         ExtID: ExtID
                     }).then(function (game) {
-                        res.json(game);
+                        resJson.push(game);
                     }).catch(function (err) {
                         res.json(err)
                     });
                 }
-
+                res.json(resJson);
 
             } else {
                 console.log(error);
