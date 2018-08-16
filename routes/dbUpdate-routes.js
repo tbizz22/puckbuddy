@@ -1,5 +1,5 @@
 const db = require("../models");
-var btoa = require('btoa');
+const btoa = require('btoa');
 
 // This calls my external API
 var request = require('request');
@@ -72,6 +72,61 @@ module.exports = function (app) {
         };
 
         request(options, callback);
-    })
+    });
 
-};
+    app.get("/api/UpdateTeams", function (req, res) {
+        var date = pbConfig.dates.Date;
+        var season = pbConfig.dates.Season;
+        var url = "https://api.mysportsfeeds.com/v2.0/pull/nhl/"
+        var qURL = url + season + "/team_stats_totals.json";
+
+        var options = {
+            url: qURL,
+            headers: {
+                "Authorization": "Basic " + encode
+            }
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+
+                var teamsRes = JSON.parse(body);
+                var resJson = [];
+                for (var i = 0; i < teamsRes.teamStatsTotals.length; i++) {
+
+                   var Name = teamsRes.teamStatsTotals[i].team.name;
+                   var City = teamsRes.teamStatsTotals[i].team.city;
+                   var Abvr = teamsRes.teamStatsTotals[i].team.abbreviation;
+                   var GamesPlayed = teamsRes.teamStatsTotals[i].stats.gamesPlayed;
+                   var Wins = teamsRes.teamStatsTotals[i].stats.standings.wins;
+                   var Losses = teamsRes.teamStatsTotals[i].stats.standings.losses;
+                   var OtWins = teamsRes.teamStatsTotals[i].stats.standings.overtimeWins;
+                   var ExtTeamID =teamsRes.teamStatsTotals[i].team.id;
+
+
+                    db.Team.create({
+                        Name: Name,
+                        City: City,
+                        Abvr: Abvr,
+                        GamesPlayed: GamesPlayed,
+                        Wins: Wins,
+                        Losses: Losses,
+                        OtWins: OtWins,
+                        ExtTeamID: ExtTeamID,
+                    }).then(function (team) {
+                        resJson.push(team);
+                    }).catch(function (err) {
+                        res.json(err)
+                    });
+                }
+                res.json(resJson);
+
+            } else {
+                console.log(error);
+                console.log(response.statusCode);
+            }
+        };
+
+        request(options, callback);
+    });
+}
