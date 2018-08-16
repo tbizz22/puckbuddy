@@ -72,7 +72,9 @@ module.exports = function (app) {
                 console.log(body);
 
 
-                res.render("game");
+                res.render("game", {
+                    game: body
+                });
             } else {
                 console.log(error);
                 console.log(statusCode);
