@@ -12,7 +12,7 @@
 
 {{!-- hb block here --}}
 <div class="container">
-    <ul class="collapsible popout">
+    <ul class="collapsible popout" id="games">
         {{#each schedule}}
         <li>
             <div class="collapsible-header">
@@ -29,7 +29,7 @@
             <div class="collapsible-body">
                 <div class="center-align flow-text">{{dataValues.Venue}}</div>
                 <div class="divider"></div>
-                <div class="center-align pt"><a class="waves-green white black-text btn-large center-align gameButton" data-gameid="{{ExtGameIDString}}">View
+                <div class="center-align pt"><a class="waves-green white black-text btn-large center-align gameButton" href="/game/{{ExtGameIDString}}" data-gameid="{{ExtGameIDString}}">View
                         Game Companion<i class="material-icons right">chevron_right</i></a></div>
             </div>
         </li>
@@ -42,5 +42,5 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="../js/home.js"></script>
