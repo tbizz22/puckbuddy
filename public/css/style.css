@@ -1,45 +1,81 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+.pt {
+    padding-top: 20px;
 }
 
-main {
-    flex: 1 0 auto;
+.mt40 {
+    margin-top: 40px;
 }
 
-
-.page-footer {
-    background-color: darkgray;
+.p20 {
+    padding: 20px;
 }
 
-.navbar-fixed .nav-wrapper {
-    background-color: #ffffff;
-    
-    
+.border {
+    border: 2px solid black;
 }
-
 
 .fontNunito {
     font-family: 'Nunito Sans', sans-serif;
-    color:black;
+    color:white;
     font-weight: 300;
     opacity: 1;
 }
 
-
-.mh {
-    max-height: 300px;
+.bgCard {
+    opacity: .85;
+    width: 60%;    
 }
 
-.eaten {
-    text-decoration: line-through;
+.center {
+    width: 100px;
+    height: 100px;    
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
 }
 
-.p10 {
-    padding: 10px;
+.hide {
+    display:hidden;
 }
 
-.ml10{
-    margin-left: 10px;
+.z {
+    z-index: 999;
 }
+
+.nav-wrapper {
+    background-color:grey !important;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+.page-footer {
+    background-color: grey !important;
+}
+
+.tint {
+    opacity: .8;
+}
+
+.darkBG {
+    background-color: black;
+    opacity: .4;
+}
+
+
+/* sticky footer */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      

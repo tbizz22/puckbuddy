@@ -4,6 +4,9 @@ const btoa = require('btoa');
 // This calls my external API
 var request = require('request');
 
+// get moment libary
+const moment = require("moment");
+
 //Get keys for sports feed 
 require('dotenv').config()
 const pbConfig = require('../config/puckbuddy.js');
@@ -42,6 +45,7 @@ module.exports = function (app) {
                     var awayAbbrv = sched.games[i].schedule.awayTeam.abbreviation;
                     var arena = sched.games[i].schedule.venue.name;
                     var startTime = sched.games[i].schedule.startTime;
+                    var gameDate = moment(startTime).format("YYYYMMDD");
                     var ExtgameIDString = date + "-" + awayAbbrv + "-" + homeAbbrv;
                     var ExtID = sched.games[i].schedule.id;
                     var PlayedStatus = sched.games[i].schedule.playedStatus;
@@ -49,6 +53,7 @@ module.exports = function (app) {
 
                     db.Game.create({
                         StartTime: startTime,
+                        GameDate: gameDate,
                         Venue: arena,
                         HomeTeamID: homeID,
                         HomeAbvr: homeAbbrv,

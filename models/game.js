@@ -1,6 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Game = sequelize.define("Game", {
         StartTime: DataTypes.STRING,
+        GameDate: DataTypes.STRING,
         Venue: DataTypes.STRING,
         HomeTeamID: DataTypes.INTEGER,
         HomeAbvr: DataTypes.STRING,

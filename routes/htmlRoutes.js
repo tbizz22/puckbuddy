@@ -1,30 +1,42 @@
 // htmlRoutes.js
 
 
-var db = require("../models");
+const db = require("../models");
+const pbConfig = require('../config/puckbuddy.js');
+const moment = require("moment");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+module.exports = function (app) {
+    // Load index page
+
+    app.get("/", function (req, res) {
+        db.Game.findAll({
+            where: {
+                GameDate: pbConfig.dates.Date
+            }
+        }).then(function (schedObj) {
+            var mod = schedObj    
+
+            for (var i = 0; i < mod.length; i++) {
+                var hTeam = getLogo(mod[i].dataValues.HomeTeamID)
+                var aTeam = getLogo(mod[i].dataValues.AwayTeamID)  
+                var localStartTime = mod[i].dataValues.StartTime;             
+
+                mod[i].dataValues["LocalStartTime"] = moment(localStartTime).format("LT");
+                mod[i].dataValues["HTlogoPath"] = hTeam;
+                mod[i].dataValues["ATlogoPath"] = aTeam;
+            };
+            res.render("index", {
+                schedule: mod
+            });
+        }).catch(function (err) {
+            res.json(err);
+        });
     });
-  });
+}
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-};
+
+function getLogo(teamId) {
+    var path = pbConfig.teams[teamId]    
+    return path;
+}
