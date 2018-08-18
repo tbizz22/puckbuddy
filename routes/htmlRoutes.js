@@ -27,12 +27,12 @@ module.exports = function (app) {
                 GameDate: pbConfig.dates.Date
             }
         }).then(function (schedObj) {
-            var mod = schedObj    
+            var mod = schedObj
 
             for (var i = 0; i < mod.length; i++) {
                 var hTeam = getLogo(mod[i].dataValues.HomeTeamID)
-                var aTeam = getLogo(mod[i].dataValues.AwayTeamID)  
-                var localStartTime = mod[i].dataValues.StartTime;             
+                var aTeam = getLogo(mod[i].dataValues.AwayTeamID)
+                var localStartTime = mod[i].dataValues.StartTime;
 
                 mod[i].dataValues["LocalStartTime"] = moment(localStartTime).format("LT");
                 mod[i].dataValues["HTlogoPath"] = hTeam;
@@ -48,18 +48,18 @@ module.exports = function (app) {
 
 
     app.get("/game/:id", function (req, res) {
-        
+
         // improvement is to get team stats from DB here. 
-        
-        
-        
+
+
+
 
         // get player data direct from API        
         var id = req.params.id;
         var season = pbConfig.dates.Season;
         var url = "https://api.mysportsfeeds.com/v2.0/pull/nhl/"
         var qURL = url + season + "/games/" + id + "/lineup.json"
- 
+
         var options = {
             url: qURL,
             headers: {
@@ -68,21 +68,27 @@ module.exports = function (app) {
         };
 
         function callback(error, response, body) {
-            if (!error && response.statusCode ==200) {
-                console.log(body);
+            if (!error && response.statusCode === 200) {
+                var mod = JSON.parse(body);
 
+                var game = setGame(mod);
+                var ht = setHt(mod);                
+                var at = setAt(mod);
 
                 res.render("game", {
-                    game: body
+                    game: game,
+                    ht: ht,
+                    at: at
                 });
+
             } else {
                 console.log(error);
                 console.log(statusCode);
             }
         }
- 
 
-        request(options,callback);
+
+        request(options, callback);
 
     })
 
@@ -91,9 +97,40 @@ module.exports = function (app) {
 }
 
 
+function setGame(fullObject) {
+    var fullObj = fullObject;
+
+    gObj ={};
+
+    return gObj
+
+}
+
+
+function setHt(fullObject) {
+    var fullObj = fullObject;
+
+    htObj = {};    
+
+
+    return htObj;
+}
+
+
+function setAt(fullObject) {
+    var fullObj = fullObject;
+    
+    ht = fullObj.
+
+    atObj = {};    
+  
+
+
+    return atObj;
+}
 
 
 function getLogo(teamId) {
-    var path = pbConfig.teams[teamId]    
+    var path = pbConfig.teams[teamId]
     return path;
 }

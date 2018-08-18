@@ -1,12 +1,23 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
-            <li class="tab col s6"><a href="#test1">{{teamLineups.team.abbreviation}}</a></li>
+            <li class="tab col s6"><a href="#test1">{{game.homeTeam.abbreviation}}</a></li>
             <li class="tab col s6"><a href="#test2">Test 2</a></li>
         </ul>
     </div>
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="col s12">Test 2</div>
+    <div id="test1" class="col s12">Test 1 
+        {{#each at.lineupPositions}} 
+        {{position}} 
+        {{/each}}
+    </div>
+
+
+
+
+
+    <div id="test2" class="col s12">Test 2 
+     {{game.}}
+    </div>
 </div>
 
 
