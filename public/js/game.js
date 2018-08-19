@@ -11,7 +11,4 @@ $(document).ready(function () {
     $('.tabs').tabs();
     $('.scrollspy').scrollSpy();
     $('.modal').modal();
-
-
-
 });
