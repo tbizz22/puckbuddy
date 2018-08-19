@@ -84,3 +84,7 @@ body {
       font-weight: 800;
       font-size: 5em;
   }
+
+  .pbLogo{
+      max-height: 55px;
+  }
