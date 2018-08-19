@@ -85,7 +85,7 @@ module.exports = function (app) {
             if (!error && response.statusCode === 200) {
                 var mod = JSON.parse(body);
 
-                var game = setGame(mod);
+                var game = setGame(mod.game);
                 var ht = setTeam(mod, 1);
                 var at = setTeam(mod, 0);
 
@@ -123,11 +123,11 @@ function setGame(fullObject) {
 
 function setTeam(fullObject, team) {
     var fullObj = fullObject;
-    var htObj = {};
+    var tObj = {};
 
     // add player references
     var ref = fullObject.references.playerReferences;
-    // htObj.ref = ref;
+    // tObj.ref = ref;
 
     // get player lineup
     var linesFeed = fullObject.teamLineups[team].expected.lineupPositions;
@@ -198,7 +198,7 @@ function setTeam(fullObject, team) {
         if (isGoalie === true) {
             pos = posData[1];
             line = posData[1];
-            if (pos == "Starter") {                
+            if (pos == "Starter") {
                 isSg = true;
             } else if (pos == "Backup") {
                 isBg = true;
@@ -233,12 +233,23 @@ function setTeam(fullObject, team) {
                 var lastName = ref[p].lastName
                 var officialPosition = ref[p].primaryPosition
                 var jerseyNumber = ref[p].jerseyNumber
+                var currentInjury = ref[p].currentInjury
+                var height = ref[p].height
+                var weight = ref[p].weight
+                var birthDate = ref[p].birthDate
+                var age = ref[p].age
+                var birthCity = ref[p].birthCity
+                var birthCountry = ref[p].birthCountry
+                var rookie = ref[p].rookie
+                var college = ref[p].college
+                var twitter = ref[p].twitter
+                var handedness = ref[p].handedness.shoots
             }
         }
 
         //    add players to object
         var posDataCurrIterator = new PositionData(playerType, line, pos, playerID, isForward, isDefense, isGoalie, isLine1, isLine2, isLine3, isLine4, isLw, isC, isRw, isLd, isRd, isSg, isBg)
-        var playerDataCurrIterator = new PlayerData(id, firstName, lastName, officialPosition, jerseyNumber)
+        var playerDataCurrIterator = new PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness)
 
 
         var tempObj = {};
@@ -246,10 +257,10 @@ function setTeam(fullObject, team) {
         tempObj.playerData = playerDataCurrIterator;
 
         lines.push(tempObj);
-        htObj.lines = lines;
+        tObj.lines = lines;
     }
-    console.log((htObj));
-    return htObj;
+
+    return tObj;
 }
 
 
@@ -283,29 +294,21 @@ function PositionData(playerType, line, position, id, isForward, isDefense, isGo
 };
 
 
-function PlayerData(id, firstName, lastName, officialPosition, jerseyNumber) {
+function PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness) {
     this.id = id,
         this.firstName = firstName,
         this.lastName = lastName,
         this.position = officialPosition,
-        this.jerseyNumber = jerseyNumber
-
-    // "lastName": "Anderson",
-    // "position": "G",
-    // "jerseyNumber": 41,
-    // "currentTeam": {
-    //     "id": 13,
-    //     "abbreviation": "OTT"
-    // },
-    // "currentRosterStatus": "ROSTER",
-    // "currentInjury": null,
-    // "height": "6'2\"",
-    // "weight": 187,
-    // "birthDate": "1981-05-21",
-    // "age": 37,
-    // "birthCity": "Park Ridge, IL",
-    // "birthCountry": "USA",
-    // "rookie": false,
-    // "college": null,
-    // "twitter": "CraigAnderson41",
+        this.jerseyNumber = jerseyNumber,
+        this.currentInjury = currentInjury,
+        this.height = height,
+        this.weight = weight,
+        this.birthDate = birthDate,
+        this.age = age,
+        this.birthCity = birthCity,
+        this.birthCountry = birthCountry,
+        this.rookie = rookie,
+        this.college = college,
+        this.twitter = twitter,
+        this.handedness = handedness
 };
