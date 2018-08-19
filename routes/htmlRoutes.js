@@ -1,17 +1,3 @@
-// handlebars helper functions
-const Handlebars = require("handlebars");
-Handlebars.registerHelper("firstLine", function (line, option) {
-    if (line == option) {
-        return "Line One"
-    } else {
-        return "kick rocks"
-    }
-})
-
-
-
-
-
 // htmlRoutes.js
 
 const btoa = require('btoa');
@@ -193,8 +179,7 @@ function setTeam(fullObject, team) {
         }
 
         // determine position
-        var posData = position.split("-");
-        console.log(posData)
+        var posData = position.split("-");      
         if (isGoalie === true) {
             pos = posData[1];
             line = posData[1];
