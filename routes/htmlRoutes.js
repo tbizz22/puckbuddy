@@ -1,11 +1,12 @@
-
 // handlebars helper functions
 const Handlebars = require("handlebars");
-Handlebars.registerHelper("firstLine", function(line, option) {
-if (line == option) {
-    return "Line One"
-}
-}) 
+Handlebars.registerHelper("firstLine", function (line, option) {
+    if (line == option) {
+        return "Line One"
+    } else {
+        return "kick rocks"
+    }
+})
 
 
 
@@ -85,8 +86,8 @@ module.exports = function (app) {
                 var mod = JSON.parse(body);
 
                 var game = setGame(mod);
-                var ht = setHt(mod);
-                var at = setAt(mod);
+                var ht = setTeam(mod, 1);
+                var at = setTeam(mod, 0);
 
                 res.render("game", {
                     game: game,
@@ -120,7 +121,7 @@ function setGame(fullObject) {
 }
 
 
-function setHt(fullObject) {
+function setTeam(fullObject, team) {
     var fullObj = fullObject;
     var htObj = {};
 
@@ -129,7 +130,7 @@ function setHt(fullObject) {
     // htObj.ref = ref;
 
     // get player lineup
-    var linesFeed = fullObject.teamLineups[1].expected.lineupPositions;
+    var linesFeed = fullObject.teamLineups[team].expected.lineupPositions;
 
     // this is where processed players will be pushed
     var lines = [];
@@ -145,7 +146,18 @@ function setHt(fullObject) {
         var isGoalie = false;
         var isForward = false;
         var playerType;
-        var playerID = 1
+        var playerID;
+        var isLine1 = false;
+        var isLine2 = false;
+        var isLine3 = false;
+        var isLine4 = false;
+        var isLw = false;
+        var isC = false;
+        var isRw = false;
+        var isLd = false;
+        var isRd = false;
+        var isSg = false;
+        var isBg = false;
 
 
 
@@ -166,6 +178,16 @@ function setHt(fullObject) {
         if (isForward === true || isDefense === true) {
             var lineData = position.match(/\d+/g).map(Number);
             line = lineData[0];
+
+            if (line === 1) {
+                isLine1 = true;
+            } else if (line === 2) {
+                isLine2 = true;
+            } else if (line === 3) {
+                isLine3 = true;
+            } else if (line === 4) {
+                isLine4 = true;
+            }
         } else {
             line = "";
         }
@@ -176,14 +198,31 @@ function setHt(fullObject) {
         if (isGoalie === true) {
             pos = posData[1];
             line = posData[1];
+            if (pos == "Starter") {                
+                isSg = true;
+            } else if (pos == "Backup") {
+                isBg = true;
+            }
+
         } else {
             pos = posData[1];
+
+            if (pos === "LW") {
+                isLw = true;
+            } else if (pos === "C") {
+                isC = true;
+            } else if (pos === "RW") {
+                isRw = true;
+            } else if (pos === "L") {
+                isLd = true;
+            } else if (pos === "R") {
+                isRd = true;
+            }
         }
 
 
         // set player id
         playerID = player.id
-
 
         // enrich player object
 
@@ -197,43 +236,23 @@ function setHt(fullObject) {
             }
         }
 
-
-
-
-
         //    add players to object
-        var posDataCurrIterator = new PositionData(playerType, line, pos, playerID, isForward, isDefense, isGoalie)
+        var posDataCurrIterator = new PositionData(playerType, line, pos, playerID, isForward, isDefense, isGoalie, isLine1, isLine2, isLine3, isLine4, isLw, isC, isRw, isLd, isRd, isSg, isBg)
         var playerDataCurrIterator = new PlayerData(id, firstName, lastName, officialPosition, jerseyNumber)
 
 
         var tempObj = {};
         tempObj.positionData = posDataCurrIterator;
-        tempObj.playerdata = playerDataCurrIterator;
+        tempObj.playerData = playerDataCurrIterator;
 
         lines.push(tempObj);
         htObj.lines = lines;
-
-
-
     }
-
-
-
-
-
-
-
-
-
     console.log((htObj));
     return htObj;
 }
 
 
-function setAt(fullObject) {
-    var fullObj = fullObject;
-
-}
 
 
 function getLogo(teamId) {
@@ -242,14 +261,25 @@ function getLogo(teamId) {
 }
 
 
-function PositionData(playerType, line, position, id, isForward, isDefense, isGoalie) {
+function PositionData(playerType, line, position, id, isForward, isDefense, isGoalie, isLine1, isLine2, isLine3, isLine4, isLw, isC, isRw, isLd, isRd, isSg, isBg) {
     this.playerType = playerType,
-    this.line = line,
-    this.position = position
+        this.line = line,
+        this.position = position
     this.id = id
     this.isForward = isForward
     this.isDefense = isDefense
     this.isGoalie = isGoalie
+    this.isLine1 = isLine1
+    this.isLine2 = isLine2
+    this.isLine3 = isLine3
+    this.isLine4 = isLine4
+    this.isLw = isLw
+    this.isC = isC
+    this.isRw = isRw
+    this.isLd = isLd
+    this.isRd = isRd
+    this.isSg = isSg
+    this.isBg = isBg
 };
 
 
