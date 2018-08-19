@@ -3,7 +3,7 @@
         <div class="card-content">
             <div class="row shortRow">
                 <div class="col s2">
-                    <div class="playerNumber flow-text">19</div>
+                    <div class="playerNumber flow-text">{{playerData.jerseyNumber}}</div>
                 </div>
 
                 <div class="col s1">
@@ -11,15 +11,15 @@
 
                 <div class="col s7 pName">
                     <div class="row fnrow shortRow">
-                        <div class="firstName flow-text">FirstName</div>
+                        <div class="firstName flow-text">{{playerData.firstName}}</div>
                     </div>
                     <div class="row lnrow shortRow">
-                        <div class="lastName flow-text">LastName</div>
+                        <div class="lastName flow-text">{{playerData.lastName}}</div>
                     </div>
                 </div>
                 <div class="col s2">
                     <div class="row shortRow">
-                        <div class="capt flow-text">C</div>
+                        <div class="capt flow-text"></div>
                     </div>
                 </div>
 
@@ -29,12 +29,12 @@
             <div class="row shortRow">
                 <div class="statRow">
                     <div class="col s6 center-align flow-text">
-                        <span>Toronto</span>,
-                        <span>Ontario</span>
+                        <span>{{playerData.birthCity}}</span>,
+                        <span class="truncate">{{playerData.birthCountry}}</span>
                     </div>
                     <div class="col s6 center-align flow-text">
-                        <span>6'1"</span> -
-                        <span>200</span> lb
+                        <span>{{playerData.height}}</span> -
+                        <span>{{playerData.weight}}</span> lb
                     </div>
                 </div>
             </div>
@@ -43,15 +43,15 @@
                 <div class="statRow">
                     <div class="col s4 center-align">
                         <strong>Shoots: </strong>
-                        <span>L</span>
+                        <span>{{playerData.handedness}}</span>
                     </div>
                     <div class="col s4 center-align">
                         <strong>Age: </strong>
-                        <span>30</span>
+                        <span>{{playerData.age}}</span>
                     </div>
                     <div class="col s4 center-align">
-                        <strong>Drafted: </strong>
-                        <span>2009</span>
+                        <strong>Twitter: </strong>
+                        <a href="https://twitter.com/{{playerData.twitter}}">{{playerData.twitter}}</a>
                     </div>
                 </div>
             </div>

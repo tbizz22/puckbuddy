@@ -1,0 +1,1559 @@
+{
+    "lastUpdatedOn": "2018-08-19T00:44:00.427Z",
+    "teamStatsTotals": [{
+        "team": {
+            "id": 29,
+            "city": "Anaheim",
+            "name": "Ducks",
+            "abbreviation": "ANA",
+            "homeVenue": {
+                "id": 8,
+                "name": "Honda Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 44,
+                "losses": 25,
+                "overtimeWins": 0,
+                "overtimeLosses": 13,
+                "points": 101
+            },
+            "faceoffs": {
+                "faceoffWins": 2499,
+                "faceoffLosses": 2376,
+                "faceoffPercent": 51.3
+            },
+            "powerplay": {
+                "powerplays": 216,
+                "powerplayGoals": 38,
+                "powerplayPercent": 17.6,
+                "penaltyKills": 275,
+                "penaltyKillGoalsAllowed": 46,
+                "penaltyKillPercent": 83.3
+            },
+            "miscellaneous": {
+                "goalsFor": 231,
+                "goalsAgainst": 209,
+                "shots": 2475,
+                "blockedShots": 1233,
+                "penalties": 347,
+                "penaltyMinutes": 820,
+                "hits": 1949
+            }
+        }
+    }, {
+        "team": {
+            "id": 30,
+            "city": "Arizona",
+            "name": "Coyotes",
+            "abbreviation": "ARI",
+            "homeVenue": {
+                "id": 6,
+                "name": "Gila River Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 29,
+                "losses": 41,
+                "overtimeWins": 0,
+                "overtimeLosses": 12,
+                "points": 70
+            },
+            "faceoffs": {
+                "faceoffWins": 2429,
+                "faceoffLosses": 2659,
+                "faceoffPercent": 47.7
+            },
+            "powerplay": {
+                "powerplays": 245,
+                "powerplayGoals": 41,
+                "powerplayPercent": 16.7,
+                "penaltyKills": 224,
+                "penaltyKillGoalsAllowed": 46,
+                "penaltyKillPercent": 79.5
+            },
+            "miscellaneous": {
+                "goalsFor": 206,
+                "goalsAgainst": 251,
+                "shots": 2450,
+                "blockedShots": 1186,
+                "penalties": 280,
+                "penaltyMinutes": 650,
+                "hits": 1999
+            }
+        }
+    }, {
+        "team": {
+            "id": 11,
+            "city": "Boston",
+            "name": "Bruins",
+            "abbreviation": "BOS",
+            "homeVenue": {
+                "id": 27,
+                "name": "TD Garden"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 50,
+                "losses": 20,
+                "overtimeWins": 0,
+                "overtimeLosses": 12,
+                "points": 112
+            },
+            "faceoffs": {
+                "faceoffWins": 2577,
+                "faceoffLosses": 2501,
+                "faceoffPercent": 50.7
+            },
+            "powerplay": {
+                "powerplays": 251,
+                "powerplayGoals": 61,
+                "powerplayPercent": 24.3,
+                "penaltyKills": 245,
+                "penaltyKillGoalsAllowed": 40,
+                "penaltyKillPercent": 83.7
+            },
+            "miscellaneous": {
+                "goalsFor": 267,
+                "goalsAgainst": 211,
+                "shots": 2701,
+                "blockedShots": 1072,
+                "penalties": 319,
+                "penaltyMinutes": 792,
+                "hits": 1914
+            }
+        }
+    }, {
+        "team": {
+            "id": 15,
+            "city": "Buffalo",
+            "name": "Sabres",
+            "abbreviation": "BUF",
+            "homeVenue": {
+                "id": 10,
+                "name": "KeyBank Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 25,
+                "losses": 45,
+                "overtimeWins": 0,
+                "overtimeLosses": 12,
+                "points": 62
+            },
+            "faceoffs": {
+                "faceoffWins": 2539,
+                "faceoffLosses": 2388,
+                "faceoffPercent": 51.5
+            },
+            "powerplay": {
+                "powerplays": 257,
+                "powerplayGoals": 49,
+                "powerplayPercent": 19.1,
+                "penaltyKills": 234,
+                "penaltyKillGoalsAllowed": 52,
+                "penaltyKillPercent": 77.8
+            },
+            "miscellaneous": {
+                "goalsFor": 198,
+                "goalsAgainst": 278,
+                "shots": 2555,
+                "blockedShots": 1082,
+                "penalties": 284,
+                "penaltyMinutes": 675,
+                "hits": 1767
+            }
+        }
+    }, {
+        "team": {
+            "id": 23,
+            "city": "Calgary",
+            "name": "Flames",
+            "abbreviation": "CGY",
+            "homeVenue": {
+                "id": 18,
+                "name": "Scotiabank Saddledome"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 37,
+                "losses": 35,
+                "overtimeWins": 0,
+                "overtimeLosses": 10,
+                "points": 84
+            },
+            "faceoffs": {
+                "faceoffWins": 2496,
+                "faceoffLosses": 2560,
+                "faceoffPercent": 49.4
+            },
+            "powerplay": {
+                "powerplays": 267,
+                "powerplayGoals": 43,
+                "powerplayPercent": 16.1,
+                "penaltyKills": 275,
+                "penaltyKillGoalsAllowed": 49,
+                "penaltyKillPercent": 82.2
+            },
+            "miscellaneous": {
+                "goalsFor": 216,
+                "goalsAgainst": 243,
+                "shots": 2758,
+                "blockedShots": 1100,
+                "penalties": 361,
+                "penaltyMinutes": 918,
+                "hits": 1639
+            }
+        }
+    }, {
+        "team": {
+            "id": 3,
+            "city": "Carolina",
+            "name": "Hurricanes",
+            "abbreviation": "CAR",
+            "homeVenue": {
+                "id": 21,
+                "name": "PNC Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 36,
+                "losses": 35,
+                "overtimeWins": 0,
+                "overtimeLosses": 11,
+                "points": 83
+            },
+            "faceoffs": {
+                "faceoffWins": 2594,
+                "faceoffLosses": 2204,
+                "faceoffPercent": 54.1
+            },
+            "powerplay": {
+                "powerplays": 240,
+                "powerplayGoals": 44,
+                "powerplayPercent": 18.3,
+                "penaltyKills": 196,
+                "penaltyKillGoalsAllowed": 43,
+                "penaltyKillPercent": 78.1
+            },
+            "miscellaneous": {
+                "goalsFor": 225,
+                "goalsAgainst": 253,
+                "shots": 2780,
+                "blockedShots": 1006,
+                "penalties": 227,
+                "penaltyMinutes": 512,
+                "hits": 1597
+            }
+        }
+    }, {
+        "team": {
+            "id": 20,
+            "city": "Chicago",
+            "name": "Blackhawks",
+            "abbreviation": "CHI",
+            "homeVenue": {
+                "id": 28,
+                "name": "United Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 33,
+                "losses": 39,
+                "overtimeWins": 0,
+                "overtimeLosses": 10,
+                "points": 76
+            },
+            "faceoffs": {
+                "faceoffWins": 2472,
+                "faceoffLosses": 2548,
+                "faceoffPercent": 49.2
+            },
+            "powerplay": {
+                "powerplays": 270,
+                "powerplayGoals": 43,
+                "powerplayPercent": 15.9,
+                "penaltyKills": 233,
+                "penaltyKillGoalsAllowed": 49,
+                "penaltyKillPercent": 79.0
+            },
+            "miscellaneous": {
+                "goalsFor": 228,
+                "goalsAgainst": 254,
+                "shots": 2792,
+                "blockedShots": 1199,
+                "penalties": 279,
+                "penaltyMinutes": 619,
+                "hits": 1376
+            }
+        }
+    }, {
+        "team": {
+            "id": 22,
+            "city": "Colorado",
+            "name": "Avalanche",
+            "abbreviation": "COL",
+            "homeVenue": {
+                "id": 19,
+                "name": "Pepsi Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 43,
+                "losses": 30,
+                "overtimeWins": 0,
+                "overtimeLosses": 9,
+                "points": 95
+            },
+            "faceoffs": {
+                "faceoffWins": 2135,
+                "faceoffLosses": 2693,
+                "faceoffPercent": 44.2
+            },
+            "powerplay": {
+                "powerplays": 300,
+                "powerplayGoals": 65,
+                "powerplayPercent": 21.7,
+                "penaltyKills": 270,
+                "penaltyKillGoalsAllowed": 45,
+                "penaltyKillPercent": 83.3
+            },
+            "miscellaneous": {
+                "goalsFor": 255,
+                "goalsAgainst": 236,
+                "shots": 2434,
+                "blockedShots": 1299,
+                "penalties": 322,
+                "penaltyMinutes": 731,
+                "hits": 1633
+            }
+        }
+    }, {
+        "team": {
+            "id": 19,
+            "city": "Columbus",
+            "name": "Blue Jackets",
+            "abbreviation": "CBJ",
+            "homeVenue": {
+                "id": 17,
+                "name": "Nationwide Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 45,
+                "losses": 30,
+                "overtimeWins": 0,
+                "overtimeLosses": 7,
+                "points": 97
+            },
+            "faceoffs": {
+                "faceoffWins": 2399,
+                "faceoffLosses": 2558,
+                "faceoffPercent": 48.4
+            },
+            "powerplay": {
+                "powerplays": 228,
+                "powerplayGoals": 39,
+                "powerplayPercent": 17.1,
+                "penaltyKills": 212,
+                "penaltyKillGoalsAllowed": 51,
+                "penaltyKillPercent": 75.9
+            },
+            "miscellaneous": {
+                "goalsFor": 236,
+                "goalsAgainst": 226,
+                "shots": 2761,
+                "blockedShots": 1218,
+                "penalties": 252,
+                "penaltyMinutes": 567,
+                "hits": 1745
+            }
+        }
+    }, {
+        "team": {
+            "id": 27,
+            "city": "Dallas",
+            "name": "Stars",
+            "abbreviation": "DAL",
+            "homeVenue": {
+                "id": 2,
+                "name": "American Airlines Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 42,
+                "losses": 32,
+                "overtimeWins": 0,
+                "overtimeLosses": 8,
+                "points": 92
+            },
+            "faceoffs": {
+                "faceoffWins": 2701,
+                "faceoffLosses": 2443,
+                "faceoffPercent": 52.5
+            },
+            "powerplay": {
+                "powerplays": 248,
+                "powerplayGoals": 47,
+                "powerplayPercent": 19.0,
+                "penaltyKills": 280,
+                "penaltyKillGoalsAllowed": 54,
+                "penaltyKillPercent": 80.7
+            },
+            "miscellaneous": {
+                "goalsFor": 231,
+                "goalsAgainst": 222,
+                "shots": 2561,
+                "blockedShots": 1272,
+                "penalties": 351,
+                "penaltyMinutes": 836,
+                "hits": 1861
+            }
+        }
+    }, {
+        "team": {
+            "id": 16,
+            "city": "Detroit",
+            "name": "Red Wings",
+            "abbreviation": "DET",
+            "homeVenue": {
+                "id": 145,
+                "name": "Little Caesars Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 30,
+                "losses": 39,
+                "overtimeWins": 0,
+                "overtimeLosses": 13,
+                "points": 73
+            },
+            "faceoffs": {
+                "faceoffWins": 2447,
+                "faceoffLosses": 2562,
+                "faceoffPercent": 48.9
+            },
+            "powerplay": {
+                "powerplays": 234,
+                "powerplayGoals": 41,
+                "powerplayPercent": 17.5,
+                "penaltyKills": 257,
+                "penaltyKillGoalsAllowed": 58,
+                "penaltyKillPercent": 77.4
+            },
+            "miscellaneous": {
+                "goalsFor": 212,
+                "goalsAgainst": 254,
+                "shots": 2489,
+                "blockedShots": 1168,
+                "penalties": 308,
+                "penaltyMinutes": 742,
+                "hits": 1606
+            }
+        }
+    }, {
+        "team": {
+            "id": 24,
+            "city": "Edmonton",
+            "name": "Oilers",
+            "abbreviation": "EDM",
+            "homeVenue": {
+                "id": 22,
+                "name": "Rogers Place"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 36,
+                "losses": 40,
+                "overtimeWins": 0,
+                "overtimeLosses": 6,
+                "points": 78
+            },
+            "faceoffs": {
+                "faceoffWins": 2393,
+                "faceoffLosses": 2523,
+                "faceoffPercent": 48.7
+            },
+            "powerplay": {
+                "powerplays": 211,
+                "powerplayGoals": 31,
+                "powerplayPercent": 14.7,
+                "penaltyKills": 245,
+                "penaltyKillGoalsAllowed": 57,
+                "penaltyKillPercent": 76.7
+            },
+            "miscellaneous": {
+                "goalsFor": 229,
+                "goalsAgainst": 262,
+                "shots": 2740,
+                "blockedShots": 1275,
+                "penalties": 299,
+                "penaltyMinutes": 752,
+                "hits": 2134
+            }
+        }
+    }, {
+        "team": {
+            "id": 4,
+            "city": "Florida",
+            "name": "Panthers",
+            "abbreviation": "FLO",
+            "homeVenue": {
+                "id": 3,
+                "name": "BB&T Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 44,
+                "losses": 30,
+                "overtimeWins": 0,
+                "overtimeLosses": 8,
+                "points": 96
+            },
+            "faceoffs": {
+                "faceoffWins": 2657,
+                "faceoffLosses": 2579,
+                "faceoffPercent": 50.7
+            },
+            "powerplay": {
+                "powerplays": 255,
+                "powerplayGoals": 47,
+                "powerplayPercent": 18.4,
+                "penaltyKills": 231,
+                "penaltyKillGoalsAllowed": 45,
+                "penaltyKillPercent": 80.5
+            },
+            "miscellaneous": {
+                "goalsFor": 245,
+                "goalsAgainst": 243,
+                "shots": 2822,
+                "blockedShots": 1172,
+                "penalties": 336,
+                "penaltyMinutes": 909,
+                "hits": 1653
+            }
+        }
+    }, {
+        "team": {
+            "id": 28,
+            "city": "Los Angeles",
+            "name": "Kings",
+            "abbreviation": "LAK",
+            "homeVenue": {
+                "id": 25,
+                "name": "Staples Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 45,
+                "losses": 29,
+                "overtimeWins": 0,
+                "overtimeLosses": 8,
+                "points": 98
+            },
+            "faceoffs": {
+                "faceoffWins": 2429,
+                "faceoffLosses": 2454,
+                "faceoffPercent": 49.7
+            },
+            "powerplay": {
+                "powerplays": 237,
+                "powerplayGoals": 49,
+                "powerplayPercent": 20.7,
+                "penaltyKills": 255,
+                "penaltyKillGoalsAllowed": 39,
+                "penaltyKillPercent": 84.7
+            },
+            "miscellaneous": {
+                "goalsFor": 237,
+                "goalsAgainst": 202,
+                "shots": 2544,
+                "blockedShots": 1198,
+                "penalties": 316,
+                "penaltyMinutes": 735,
+                "hits": 2115
+            }
+        }
+    }, {
+        "team": {
+            "id": 25,
+            "city": "Minnesota",
+            "name": "Wild",
+            "abbreviation": "MIN",
+            "homeVenue": {
+                "id": 30,
+                "name": "Xcel Energy Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 45,
+                "losses": 26,
+                "overtimeWins": 0,
+                "overtimeLosses": 11,
+                "points": 101
+            },
+            "faceoffs": {
+                "faceoffWins": 2416,
+                "faceoffLosses": 2434,
+                "faceoffPercent": 49.8
+            },
+            "powerplay": {
+                "powerplays": 238,
+                "powerplayGoals": 49,
+                "powerplayPercent": 20.6,
+                "penaltyKills": 270,
+                "penaltyKillGoalsAllowed": 51,
+                "penaltyKillPercent": 81.1
+            },
+            "miscellaneous": {
+                "goalsFor": 250,
+                "goalsAgainst": 229,
+                "shots": 2476,
+                "blockedShots": 1295,
+                "penalties": 317,
+                "penaltyMinutes": 690,
+                "hits": 1367
+            }
+        }
+    }, {
+        "team": {
+            "id": 14,
+            "city": "Montreal",
+            "name": "Canadiens",
+            "abbreviation": "MTL",
+            "homeVenue": {
+                "id": 4,
+                "name": "Bell Centre"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 29,
+                "losses": 40,
+                "overtimeWins": 0,
+                "overtimeLosses": 13,
+                "points": 71
+            },
+            "faceoffs": {
+                "faceoffWins": 2395,
+                "faceoffLosses": 2642,
+                "faceoffPercent": 47.5
+            },
+            "powerplay": {
+                "powerplays": 249,
+                "powerplayGoals": 52,
+                "powerplayPercent": 20.9,
+                "penaltyKills": 263,
+                "penaltyKillGoalsAllowed": 68,
+                "penaltyKillPercent": 74.1
+            },
+            "miscellaneous": {
+                "goalsFor": 207,
+                "goalsAgainst": 258,
+                "shots": 2686,
+                "blockedShots": 1351,
+                "penalties": 320,
+                "penaltyMinutes": 722,
+                "hits": 2169
+            }
+        }
+    }, {
+        "team": {
+            "id": 18,
+            "city": "Nashville",
+            "name": "Predators",
+            "abbreviation": "NSH",
+            "homeVenue": {
+                "id": 15,
+                "name": "Bridgestone Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 53,
+                "losses": 19,
+                "overtimeWins": 0,
+                "overtimeLosses": 11,
+                "points": 117
+            },
+            "faceoffs": {
+                "faceoffWins": 2776,
+                "faceoffLosses": 2437,
+                "faceoffPercent": 53.3
+            },
+            "powerplay": {
+                "powerplays": 275,
+                "powerplayGoals": 58,
+                "powerplayPercent": 21.1,
+                "penaltyKills": 302,
+                "penaltyKillGoalsAllowed": 55,
+                "penaltyKillPercent": 81.8
+            },
+            "miscellaneous": {
+                "goalsFor": 263,
+                "goalsAgainst": 208,
+                "shots": 2665,
+                "blockedShots": 1220,
+                "penalties": 388,
+                "penaltyMinutes": 976,
+                "hits": 1675
+            }
+        }
+    }, {
+        "team": {
+            "id": 7,
+            "city": "New Jersey",
+            "name": "Devils",
+            "abbreviation": "NJD",
+            "homeVenue": {
+                "id": 37,
+                "name": "Prudential Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 44,
+                "losses": 29,
+                "overtimeWins": 0,
+                "overtimeLosses": 9,
+                "points": 97
+            },
+            "faceoffs": {
+                "faceoffWins": 2371,
+                "faceoffLosses": 2675,
+                "faceoffPercent": 47.0
+            },
+            "powerplay": {
+                "powerplays": 254,
+                "powerplayGoals": 54,
+                "powerplayPercent": 21.3,
+                "penaltyKills": 260,
+                "penaltyKillGoalsAllowed": 47,
+                "penaltyKillPercent": 81.9
+            },
+            "miscellaneous": {
+                "goalsFor": 243,
+                "goalsAgainst": 240,
+                "shots": 2597,
+                "blockedShots": 1176,
+                "penalties": 307,
+                "penaltyMinutes": 700,
+                "hits": 1816
+            }
+        }
+    }, {
+        "team": {
+            "id": 8,
+            "city": "New York",
+            "name": "Islanders",
+            "abbreviation": "NYI",
+            "homeVenue": {
+                "id": 16,
+                "name": "Nassau Veterans Memorial Coliseum"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 35,
+                "losses": 37,
+                "overtimeWins": 0,
+                "overtimeLosses": 10,
+                "points": 80
+            },
+            "faceoffs": {
+                "faceoffWins": 2404,
+                "faceoffLosses": 2515,
+                "faceoffPercent": 48.9
+            },
+            "powerplay": {
+                "powerplays": 243,
+                "powerplayGoals": 58,
+                "powerplayPercent": 23.9,
+                "penaltyKills": 237,
+                "penaltyKillGoalsAllowed": 63,
+                "penaltyKillPercent": 73.4
+            },
+            "miscellaneous": {
+                "goalsFor": 261,
+                "goalsAgainst": 293,
+                "shots": 2573,
+                "blockedShots": 1263,
+                "penalties": 275,
+                "penaltyMinutes": 641,
+                "hits": 1816
+            }
+        }
+    }, {
+        "team": {
+            "id": 9,
+            "city": "New York",
+            "name": "Rangers",
+            "abbreviation": "NYR",
+            "homeVenue": {
+                "id": 12,
+                "name": "Madison Square Garden"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 35,
+                "losses": 39,
+                "overtimeWins": 0,
+                "overtimeLosses": 9,
+                "points": 79
+            },
+            "faceoffs": {
+                "faceoffWins": 2409,
+                "faceoffLosses": 2477,
+                "faceoffPercent": 49.3
+            },
+            "powerplay": {
+                "powerplays": 245,
+                "powerplayGoals": 52,
+                "powerplayPercent": 21.2,
+                "penaltyKills": 259,
+                "penaltyKillGoalsAllowed": 46,
+                "penaltyKillPercent": 82.2
+            },
+            "miscellaneous": {
+                "goalsFor": 232,
+                "goalsAgainst": 265,
+                "shots": 2552,
+                "blockedShots": 1246,
+                "penalties": 310,
+                "penaltyMinutes": 777,
+                "hits": 1739
+            }
+        }
+    }, {
+        "team": {
+            "id": 13,
+            "city": "Ottawa",
+            "name": "Senators",
+            "abbreviation": "OTT",
+            "homeVenue": {
+                "id": 23,
+                "name": "Canadian Tire Centre"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 28,
+                "losses": 43,
+                "overtimeWins": 0,
+                "overtimeLosses": 11,
+                "points": 67
+            },
+            "faceoffs": {
+                "faceoffWins": 2499,
+                "faceoffLosses": 2470,
+                "faceoffPercent": 50.3
+            },
+            "powerplay": {
+                "powerplays": 247,
+                "powerplayGoals": 41,
+                "powerplayPercent": 16.6,
+                "penaltyKills": 235,
+                "penaltyKillGoalsAllowed": 56,
+                "penaltyKillPercent": 76.2
+            },
+            "miscellaneous": {
+                "goalsFor": 219,
+                "goalsAgainst": 284,
+                "shots": 2515,
+                "blockedShots": 1337,
+                "penalties": 289,
+                "penaltyMinutes": 676,
+                "hits": 1966
+            }
+        }
+    }, {
+        "team": {
+            "id": 6,
+            "city": "Philadelphia",
+            "name": "Flyers",
+            "abbreviation": "PHI",
+            "homeVenue": {
+                "id": 29,
+                "name": "Wells Fargo Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 42,
+                "losses": 26,
+                "overtimeWins": 0,
+                "overtimeLosses": 14,
+                "points": 98
+            },
+            "faceoffs": {
+                "faceoffWins": 2563,
+                "faceoffLosses": 2249,
+                "faceoffPercent": 53.3
+            },
+            "powerplay": {
+                "powerplays": 264,
+                "powerplayGoals": 54,
+                "powerplayPercent": 20.5,
+                "penaltyKills": 223,
+                "penaltyKillGoalsAllowed": 54,
+                "penaltyKillPercent": 75.8
+            },
+            "miscellaneous": {
+                "goalsFor": 249,
+                "goalsAgainst": 236,
+                "shots": 2631,
+                "blockedShots": 1230,
+                "penalties": 284,
+                "penaltyMinutes": 681,
+                "hits": 1670
+            }
+        }
+    }, {
+        "team": {
+            "id": 10,
+            "city": "Pittsburgh",
+            "name": "Penguins",
+            "abbreviation": "PIT",
+            "homeVenue": {
+                "id": 40,
+                "name": "PPG Paints Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 47,
+                "losses": 29,
+                "overtimeWins": 0,
+                "overtimeLosses": 6,
+                "points": 100
+            },
+            "faceoffs": {
+                "faceoffWins": 2571,
+                "faceoffLosses": 2546,
+                "faceoffPercent": 50.2
+            },
+            "powerplay": {
+                "powerplays": 261,
+                "powerplayGoals": 68,
+                "powerplayPercent": 26.1,
+                "penaltyKills": 265,
+                "penaltyKillGoalsAllowed": 53,
+                "penaltyKillPercent": 80.0
+            },
+            "miscellaneous": {
+                "goalsFor": 270,
+                "goalsAgainst": 248,
+                "shots": 2822,
+                "blockedShots": 1184,
+                "penalties": 331,
+                "penaltyMinutes": 777,
+                "hits": 1951
+            }
+        }
+    }, {
+        "team": {
+            "id": 26,
+            "city": "San Jose",
+            "name": "Sharks",
+            "abbreviation": "SJS",
+            "homeVenue": {
+                "id": 9,
+                "name": "SAP Center at San Jose"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 45,
+                "losses": 27,
+                "overtimeWins": 0,
+                "overtimeLosses": 10,
+                "points": 100
+            },
+            "faceoffs": {
+                "faceoffWins": 2558,
+                "faceoffLosses": 2433,
+                "faceoffPercent": 51.3
+            },
+            "powerplay": {
+                "powerplays": 258,
+                "powerplayGoals": 53,
+                "powerplayPercent": 20.5,
+                "penaltyKills": 223,
+                "penaltyKillGoalsAllowed": 34,
+                "penaltyKillPercent": 84.8
+            },
+            "miscellaneous": {
+                "goalsFor": 247,
+                "goalsAgainst": 226,
+                "shots": 2701,
+                "blockedShots": 1381,
+                "penalties": 266,
+                "penaltyMinutes": 632,
+                "hits": 1380
+            }
+        }
+    }, {
+        "team": {
+            "id": 17,
+            "city": "St. Louis",
+            "name": "Blues",
+            "abbreviation": "STL",
+            "homeVenue": {
+                "id": 24,
+                "name": "Scottrade Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 44,
+                "losses": 32,
+                "overtimeWins": 0,
+                "overtimeLosses": 6,
+                "points": 94
+            },
+            "faceoffs": {
+                "faceoffWins": 2487,
+                "faceoffLosses": 2427,
+                "faceoffPercent": 50.6
+            },
+            "powerplay": {
+                "powerplays": 246,
+                "powerplayGoals": 38,
+                "powerplayPercent": 15.4,
+                "penaltyKills": 229,
+                "penaltyKillGoalsAllowed": 47,
+                "penaltyKillPercent": 79.5
+            },
+            "miscellaneous": {
+                "goalsFor": 223,
+                "goalsAgainst": 222,
+                "shots": 2677,
+                "blockedShots": 1278,
+                "penalties": 275,
+                "penaltyMinutes": 635,
+                "hits": 1893
+            }
+        }
+    }, {
+        "team": {
+            "id": 1,
+            "city": "Tampa Bay",
+            "name": "Lightning",
+            "abbreviation": "TBL",
+            "homeVenue": {
+                "id": 26,
+                "name": "Amalie Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 54,
+                "losses": 23,
+                "overtimeWins": 0,
+                "overtimeLosses": 5,
+                "points": 113
+            },
+            "faceoffs": {
+                "faceoffWins": 2441,
+                "faceoffLosses": 2621,
+                "faceoffPercent": 48.2
+            },
+            "powerplay": {
+                "powerplays": 274,
+                "powerplayGoals": 65,
+                "powerplayPercent": 23.7,
+                "penaltyKills": 267,
+                "penaltyKillGoalsAllowed": 64,
+                "penaltyKillPercent": 76.0
+            },
+            "miscellaneous": {
+                "goalsFor": 290,
+                "goalsAgainst": 234,
+                "shots": 2679,
+                "blockedShots": 1127,
+                "penalties": 335,
+                "penaltyMinutes": 753,
+                "hits": 1728
+            }
+        }
+    }, {
+        "team": {
+            "id": 12,
+            "city": "Toronto",
+            "name": "Maple Leafs",
+            "abbreviation": "TOR",
+            "homeVenue": {
+                "id": 1,
+                "name": "Air Canada Center"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 49,
+                "losses": 26,
+                "overtimeWins": 0,
+                "overtimeLosses": 7,
+                "points": 105
+            },
+            "faceoffs": {
+                "faceoffWins": 2688,
+                "faceoffLosses": 2499,
+                "faceoffPercent": 51.8
+            },
+            "powerplay": {
+                "powerplays": 226,
+                "powerplayGoals": 56,
+                "powerplayPercent": 24.8,
+                "penaltyKills": 228,
+                "penaltyKillGoalsAllowed": 43,
+                "penaltyKillPercent": 81.1
+            },
+            "miscellaneous": {
+                "goalsFor": 270,
+                "goalsAgainst": 230,
+                "shots": 2639,
+                "blockedShots": 1104,
+                "penalties": 265,
+                "penaltyMinutes": 570,
+                "hits": 1632
+            }
+        }
+    }, {
+        "team": {
+            "id": 21,
+            "city": "Vancouver",
+            "name": "Canucks",
+            "abbreviation": "VAN",
+            "homeVenue": {
+                "id": 7,
+                "name": "Rogers Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 31,
+                "losses": 40,
+                "overtimeWins": 0,
+                "overtimeLosses": 11,
+                "points": 73
+            },
+            "faceoffs": {
+                "faceoffWins": 2427,
+                "faceoffLosses": 2474,
+                "faceoffPercent": 49.5
+            },
+            "powerplay": {
+                "powerplays": 245,
+                "powerplayGoals": 53,
+                "powerplayPercent": 21.6,
+                "penaltyKills": 271,
+                "penaltyKillGoalsAllowed": 59,
+                "penaltyKillPercent": 78.2
+            },
+            "miscellaneous": {
+                "goalsFor": 218,
+                "goalsAgainst": 259,
+                "shots": 2463,
+                "blockedShots": 1152,
+                "penalties": 306,
+                "penaltyMinutes": 714,
+                "hits": 1745
+            }
+        }
+    }, {
+        "team": {
+            "id": 142,
+            "city": "Vegas",
+            "name": "Golden Knights",
+            "abbreviation": "VGK",
+            "homeVenue": {
+                "id": 139,
+                "name": "T-Mobile Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 51,
+                "losses": 24,
+                "overtimeWins": 0,
+                "overtimeLosses": 7,
+                "points": 109
+            },
+            "faceoffs": {
+                "faceoffWins": 2439,
+                "faceoffLosses": 2548,
+                "faceoffPercent": 48.9
+            },
+            "powerplay": {
+                "powerplays": 250,
+                "powerplayGoals": 53,
+                "powerplayPercent": 21.2,
+                "penaltyKills": 233,
+                "penaltyKillGoalsAllowed": 44,
+                "penaltyKillPercent": 81.1
+            },
+            "miscellaneous": {
+                "goalsFor": 268,
+                "goalsAgainst": 225,
+                "shots": 2687,
+                "blockedShots": 1179,
+                "penalties": 335,
+                "penaltyMinutes": 1232,
+                "hits": 1767
+            }
+        }
+    }, {
+        "team": {
+            "id": 5,
+            "city": "Washington",
+            "name": "Capitals",
+            "abbreviation": "WSH",
+            "homeVenue": {
+                "id": 13,
+                "name": "Capital One Arena"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 49,
+                "losses": 26,
+                "overtimeWins": 0,
+                "overtimeLosses": 7,
+                "points": 105
+            },
+            "faceoffs": {
+                "faceoffWins": 2467,
+                "faceoffLosses": 2427,
+                "faceoffPercent": 50.4
+            },
+            "powerplay": {
+                "powerplays": 239,
+                "powerplayGoals": 55,
+                "powerplayPercent": 23.0,
+                "penaltyKills": 270,
+                "penaltyKillGoalsAllowed": 53,
+                "penaltyKillPercent": 80.4
+            },
+            "miscellaneous": {
+                "goalsFor": 256,
+                "goalsAgainst": 238,
+                "shots": 2377,
+                "blockedShots": 1220,
+                "penalties": 336,
+                "penaltyMinutes": 807,
+                "hits": 1784
+            }
+        }
+    }, {
+        "team": {
+            "id": 2,
+            "city": "Winnipeg",
+            "name": "Jets",
+            "abbreviation": "WPJ",
+            "homeVenue": {
+                "id": 39,
+                "name": "Bell MTS Place"
+            },
+            "teamColoursHex": [],
+            "socialMediaAccounts": [],
+            "officialLogoImageSrc": null
+        },
+        "stats": {
+            "gamesPlayed": 82,
+            "standings": {
+                "wins": 52,
+                "losses": 20,
+                "overtimeWins": 0,
+                "overtimeLosses": 10,
+                "points": 114
+            },
+            "faceoffs": {
+                "faceoffWins": 2649,
+                "faceoffLosses": 2405,
+                "faceoffPercent": 52.4
+            },
+            "powerplay": {
+                "powerplays": 269,
+                "powerplayGoals": 64,
+                "powerplayPercent": 23.8,
+                "penaltyKills": 275,
+                "penaltyKillGoalsAllowed": 50,
+                "penaltyKillPercent": 81.8
+            },
+            "miscellaneous": {
+                "goalsFor": 273,
+                "goalsAgainst": 216,
+                "shots": 2643,
+                "blockedShots": 1240,
+                "penalties": 317,
+                "penaltyMinutes": 697,
+                "hits": 1830
+            }
+        }
+    }],
+    "references": {
+        "teamStatReferences": [{
+            "category": "Standings",
+            "fullName": "wins",
+            "description": "Wins",
+            "abbreviation": "W",
+            "type": "INTEGER"
+        }, {
+            "category": "Standings",
+            "fullName": "losses",
+            "description": "Losses",
+            "abbreviation": "L",
+            "type": "INTEGER"
+        }, {
+            "category": "Standings",
+            "fullName": "overtimeWins",
+            "description": "OT Wins",
+            "abbreviation": "OTW",
+            "type": "INTEGER"
+        }, {
+            "category": "Standings",
+            "fullName": "overtimeLosses",
+            "description": "OT Losses",
+            "abbreviation": "OTL",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "goalsFor",
+            "description": "Goals For",
+            "abbreviation": "GF",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "goalsAgainst",
+            "description": "Goals Against",
+            "abbreviation": "GA",
+            "type": "INTEGER"
+        }, {
+            "category": "Faceoffs",
+            "fullName": "faceoffWins",
+            "description": "Faceoff Wins",
+            "abbreviation": "F/O W",
+            "type": "INTEGER"
+        }, {
+            "category": "Faceoffs",
+            "fullName": "faceoffLosses",
+            "description": "Faceoff Losses",
+            "abbreviation": "F/O L",
+            "type": "INTEGER"
+        }, {
+            "category": "Faceoffs",
+            "fullName": "faceoffPercent",
+            "description": "Faceoff %",
+            "abbreviation": "F/O %",
+            "type": "DECIMAL"
+        }, {
+            "category": "Powerplay",
+            "fullName": "powerplays",
+            "description": "Powerplays",
+            "abbreviation": "PP",
+            "type": "INTEGER"
+        }, {
+            "category": "Powerplay",
+            "fullName": "powerplayGoals",
+            "description": "Powerplay Goals",
+            "abbreviation": "PPG",
+            "type": "INTEGER"
+        }, {
+            "category": "Powerplay",
+            "fullName": "powerplayPercent",
+            "description": "Powerplay %",
+            "abbreviation": "PP%",
+            "type": "DECIMAL"
+        }, {
+            "category": "Powerplay",
+            "fullName": "penaltyKills",
+            "description": "Penalty Kills",
+            "abbreviation": "PK",
+            "type": "INTEGER"
+        }, {
+            "category": "Powerplay",
+            "fullName": "penaltyKillGoalsAllowed",
+            "description": "Penalty Kill Goals Allowed",
+            "abbreviation": "PKGA",
+            "type": "INTEGER"
+        }, {
+            "category": "Powerplay",
+            "fullName": "penaltyKillPercent",
+            "description": "Penalty Kill %",
+            "abbreviation": "PK%",
+            "type": "DECIMAL"
+        }, {
+            "category": "Standings",
+            "fullName": "points",
+            "description": "Team Points",
+            "abbreviation": "Pts",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "shots",
+            "description": "Shots",
+            "abbreviation": "Sh",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "penalties",
+            "description": "Penalties",
+            "abbreviation": "Pn",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "penaltyMinutes",
+            "description": "Penalty Minutes",
+            "abbreviation": "PIM",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "hits",
+            "description": "Hits",
+            "abbreviation": "Ht",
+            "type": "INTEGER"
+        }, {
+            "category": "Miscellaneous",
+            "fullName": "blockedShots",
+            "description": "Blocked Shots",
+            "abbreviation": "BS",
+            "type": "INTEGER"
+        }]
+    }
+}

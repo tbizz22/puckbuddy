@@ -79,3 +79,8 @@ body {
     flex: 1 0 auto;
   }
       
+
+  .playerNumber {
+      font-weight: 800;
+      font-size: 5em;
+  }
