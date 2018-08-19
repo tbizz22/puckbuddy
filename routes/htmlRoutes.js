@@ -27,6 +27,7 @@ module.exports = function (app) {
                 GameDate: pbConfig.dates.Date
             }
         }).then(function (schedObj) {
+            console.log(schedObj)
             var mod = schedObj
 
             for (var i = 0; i < mod.length; i++) {
