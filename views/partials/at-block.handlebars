@@ -1,13 +1,15 @@
 <div id="test1" class="col s12">
     <div class="row">
         <div class="col s12">
-            
+            <div class="center-align">
+                Jump To: <span><a href="#forwards">Forwards</a></span> | <span><a href="#defense">Defense</a></span> | <span><a href="#goalies">Goal</a></span>
+            </div>
         </div>
     </div>
     <div>
         <h2>Forwards</h2>
     </div>
-    <div id="forwards" class="row">
+    <div id="forwards" class="row section scrollspy">
         <div class="col l12">
             <div class="row" id="fl1">
                 <div class="col l4">
@@ -160,7 +162,7 @@
                 <div>
                     <h2>Defense</h2>
                 </div>
-                <div id="defense" class="row">
+                <div id="defense" class="row section scrollspy">
                     <div class="col l12">
                         <div class="row" id="dp1">
                             <div class="col l4">
@@ -241,7 +243,7 @@
                 <div>
                     <h2>Goal</h2>
                 </div>
-                <div class="row" id="Goalies">
+                <div class="row section scrollspy" id="goalies">
                     <div class="col l4">
                         {{#each at.lines}}
                             {{#if positionData.isSg}}
