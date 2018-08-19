@@ -50,8 +50,8 @@
                         <span>{{playerData.age}}</span>
                     </div>
                     <div class="col s4 center-align">
-                        <strong>Twitter: </strong>
-                        <a href="https://twitter.com/{{playerData.twitter}}">{{playerData.twitter}}</a>
+                        <strong>Birthdate: </strong>
+                        <span>{{playerData.birthDate}}</span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
     <div class="card-action sticky-action">
         <div class="row shortRow">
             <div class="col s12 center-align">
-                <a class="btn waves-effect modal-trigger" data-target="modal1"> Player Details</a>
+                <a class="btn waves-effect modal-trigger" data-target="modal{{playerData.id}}"> Player Details</a>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@
             <div class="col s11">
                 <div class="row shortRow">
                     <div class="col s2">
-                        <div class="playerNumber flow-text">19</div>
+                        <div class="playerNumber flow-text">{{playerData.jerseyNumber}}</div>
                     </div>
 
                     <div class="col s1">
@@ -86,10 +86,10 @@
 
                     <div class="col s9 pName">
                         <div class="row fnrow shortRow">
-                            <div class="firstName flow-text">FirstName</div>
+                            <div class="firstName flow-text">{{playerData.firstName}}</div>
                         </div>
                         <div class="row lnrow shortRow">
-                            <div class="lastName flow-text">LastName</div>
+                            <div class="lastName flow-text">{{playerData.lastName}}</div>
                         </div>
                     </div>
                 </div>
@@ -133,3 +133,15 @@
         </table>
     </div>
 </div>
+
+
+{{!-- modal --}}
+ <div id="modal{{playerData.id}}" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>{{playerData.firstName}}</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>

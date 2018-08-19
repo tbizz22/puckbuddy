@@ -240,7 +240,7 @@ function setTeam(fullObject, team) {
         var tempObj = {};
         tempObj.positionData = posDataCurrIterator;
         tempObj.playerData = playerDataCurrIterator;
-
+console.log(playerDataCurrIterator)
         lines.push(tempObj);
         tObj.lines = lines;
     }
