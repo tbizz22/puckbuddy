@@ -17,6 +17,8 @@ const token = pbConfig.credentials.token;
 const password = pbConfig.credentials.password;
 const encode = btoa(token + ":" + password);
 console.log(encode);
+
+
 // get daily game schedule 
 module.exports = function (app) {
     app.get("/api/UpdateSchedule", function (req, res) {
@@ -94,30 +96,81 @@ module.exports = function (app) {
 
         function callback(error, response, body) {
             if (!error && response.statusCode == 200) {
+                console.log(body)
 
                 var teamsRes = JSON.parse(body);
                 var resJson = [];
                 for (var i = 0; i < teamsRes.teamStatsTotals.length; i++) {
 
-                   var Name = teamsRes.teamStatsTotals[i].team.name;
-                   var City = teamsRes.teamStatsTotals[i].team.city;
-                   var Abvr = teamsRes.teamStatsTotals[i].team.abbreviation;
-                   var GamesPlayed = teamsRes.teamStatsTotals[i].stats.gamesPlayed;
-                   var Wins = teamsRes.teamStatsTotals[i].stats.standings.wins;
-                   var Losses = teamsRes.teamStatsTotals[i].stats.standings.losses;
-                   var OtWins = teamsRes.teamStatsTotals[i].stats.standings.overtimeWins;
-                   var ExtTeamID =teamsRes.teamStatsTotals[i].team.id;
+                    var name = teamsRes.teamStatsTotals[i].team.name;
+                    var city = teamsRes.teamStatsTotals[i].team.city;
+                    var abvr = teamsRes.teamStatsTotals[i].team.abbreviation;
+                    var gamesPlayed = teamsRes.teamStatsTotals[i].stats.gamesPlayed;
+                    var wins = teamsRes.teamStatsTotals[i].stats.standings.wins;
+                    var losses = teamsRes.teamStatsTotals[i].stats.standings.losses;
+                    var otWins = teamsRes.teamStatsTotals[i].stats.standings.overtimeWins;
+                    var otLosses = teamsRes.teamStatsTotals[i].stats.standings.overtimeLosses;
+                    var points = teamsRes.teamStatsTotals[i].stats.standings.points;
+
+
+                    var extTeamID = teamsRes.teamStatsTotals[i].team.id;
+                    var teamColoursHex = teamsRes.teamStatsTotals[i].team.teamColoursHex[0];
+                    var socialMediaAccounts = teamsRes.teamStatsTotals[i].team.socialMediaAccounts[0];
+                    var officialLogoImageSrc = teamsRes.teamStatsTotals[i].team.officialLogoImageSrc;
+
+
+                    var faceoffWins = teamsRes.teamStatsTotals[i].stats.faceoffs.faceoffWins;
+                    var faceoffLosses = teamsRes.teamStatsTotals[i].stats.faceoffs.faceoffLosses;
+                    var faceoffPercent = teamsRes.teamStatsTotals[i].stats.faceoffs.faceoffPercent;
+
+
+                    var powerplays = teamsRes.teamStatsTotals[i].stats.powerplay.powerplays;
+                    var powerplayGoals = teamsRes.teamStatsTotals[i].stats.powerplay.powerplayGoals;
+                    var powerplayPercent = teamsRes.teamStatsTotals[i].stats.powerplay.powerplayPercent;
+                    var penaltyKills = teamsRes.teamStatsTotals[i].stats.powerplay.penaltyKills;
+                    var penaltyKillGoalsAllowed = teamsRes.teamStatsTotals[i].stats.powerplay.penaltyKillGoalsAllowed;
+                    var penaltyKillPercent = teamsRes.teamStatsTotals[i].stats.powerplay.penaltyKillPercent;
+
+
+                    var goalsFor = teamsRes.teamStatsTotals[i].stats.miscellaneous.goalsFor;
+                    var goalsAgainst = teamsRes.teamStatsTotals[i].stats.miscellaneous.goalsAgainst;
+                    var shots = teamsRes.teamStatsTotals[i].stats.miscellaneous.shots;
+                    var blockedShots = teamsRes.teamStatsTotals[i].stats.miscellaneous.blockedShots;
+                    var penalties = teamsRes.teamStatsTotals[i].stats.miscellaneous.penalties;
+                    var penaltyMinutes = teamsRes.teamStatsTotals[i].stats.miscellaneous.penaltyMinutes;
+                    var hits = teamsRes.teamStatsTotals[i].stats.miscellaneous.hits;
 
 
                     db.Team.create({
-                        Name: Name,
-                        City: City,
-                        Abvr: Abvr,
-                        GamesPlayed: GamesPlayed,
-                        Wins: Wins,
-                        Losses: Losses,
-                        OtWins: OtWins,
-                        ExtTeamID: ExtTeamID,
+                        name: name,
+                        city: city,
+                        abvr: abvr,
+                        gamesPlayed: gamesPlayed,
+                        wins: wins,
+                        losses: losses,
+                        otWins: otWins,
+                        otLosses: otLosses,
+                        points: points,
+                        extTeamID: extTeamID,
+                        teamColoursHex: teamColoursHex,
+                        socialMediaAccounts: socialMediaAccounts,
+                        officialLogoImageSrc: officialLogoImageSrc,
+                        faceoffWins: faceoffWins,
+                        faceoffLosses: faceoffLosses,
+                        faceoffPercent: faceoffPercent,
+                        powerplays: powerplays,
+                        powerplayGoals: powerplayGoals,
+                        powerplayPercent: powerplayPercent,
+                        penaltyKills: penaltyKills,
+                        penaltyKillGoalsAllowed: penaltyKillGoalsAllowed,
+                        penaltyKillPercent: penaltyKillPercent,
+                        goalsFor: goalsFor,
+                        goalsAgainst: goalsAgainst,
+                        shots: shots,
+                        blockedShots: blockedShots,
+                        penalties: penalties,
+                        penaltyMinutes: penaltyMinutes,
+                        hits: hits
                     }).then(function (team) {
                         resJson.push(team);
                     }).catch(function (err) {

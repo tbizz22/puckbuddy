@@ -180,7 +180,7 @@ function setTeam(fullObject, team) {
         }
 
         // determine position
-        var posData = position.split("-");      
+        var posData = position.split("-");
         if (isGoalie === true) {
             pos = posData[1];
             line = posData[1];
@@ -241,7 +241,7 @@ function setTeam(fullObject, team) {
         var tempObj = {};
         tempObj.positionData = posDataCurrIterator;
         tempObj.playerData = playerDataCurrIterator;
-console.log(playerDataCurrIterator)
+        console.log(playerDataCurrIterator)
         lines.push(tempObj);
         tObj.lines = lines;
     }
