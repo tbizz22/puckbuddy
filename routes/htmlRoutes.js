@@ -23,9 +23,9 @@ module.exports = function (app) {
 
     app.get("/", function (req, res) {
         db.Game.findAll({
-            where: {
-                GameDate: pbConfig.dates.Date
-            }
+            // where: {
+            //     GameDate: pbConfig.dates.Date
+            // }
         }).then(function (schedObj) {
             console.log(schedObj)
             var mod = schedObj
