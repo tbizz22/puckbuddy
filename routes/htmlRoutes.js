@@ -72,12 +72,11 @@ module.exports = function (app) {
             if (!error && response.statusCode === 200) {
                 var mod = JSON.parse(body);
 
-                var game = setGame(mod.game);
+                // var game = setGame(mod.game);
                 var ht = setTeam(mod, 1);
                 var at = setTeam(mod, 0);
-
-                res.render("game", {
-                    game: game,
+               
+                res.render("game", {                    
                     ht: ht,
                     at: at
                 });
@@ -87,31 +86,25 @@ module.exports = function (app) {
                 console.log(response.statusCode);
             }
         }
-
-
         request(options, callback);
 
     })
-
-
-
 }
 
 
-function setGame(fullObject) {
-    var fullObj = fullObject;
+// function setGame(fullObject) {
+//     var fullObj = fullObject;
 
-    gObj = {};
+//     gObj = {};
 
-    return gObj
+//     return gObj
 
-}
+// }
 
 
 function setTeam(fullObject, team) {
     var fullObj = fullObject;
     var tObj = {};
-
     // add player references
     var ref = fullObject.references.playerReferences;
     // tObj.ref = ref;
@@ -121,6 +114,31 @@ function setTeam(fullObject, team) {
 
     // this is where processed players will be pushed
     var lines = [];
+
+
+    // enhance object with team info
+
+    var teamData = fullObject.references.teamReferences;
+    
+
+    if (team === 0) {        
+        for (var t = 0; t < teamData.length; t++) {
+            if (teamData[t].id === fullObj.game.awayTeam.id) {
+                currTeam = teamData[t]
+            }
+        }
+    } else {
+        for (var t = 0; t < teamData.length; t++) {
+            if (teamData[t].id === fullObj.game.homeTeam.id) {
+                currTeam = teamData[t]
+            }
+        }
+    }
+
+    tObj.team = currTeam;
+
+
+
 
     // enrich player data
 
@@ -241,7 +259,7 @@ function setTeam(fullObject, team) {
         var tempObj = {};
         tempObj.positionData = posDataCurrIterator;
         tempObj.playerData = playerDataCurrIterator;
-        console.log(playerDataCurrIterator)
+        // console.log(playerDataCurrIterator)
         lines.push(tempObj);
         tObj.lines = lines;
     }
