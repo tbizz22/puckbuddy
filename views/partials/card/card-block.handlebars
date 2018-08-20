@@ -5,10 +5,8 @@
                 <div class="col s2">
                     <div class="playerNumber flow-text">{{playerData.jerseyNumber}}</div>
                 </div>
-
                 <div class="col s1">
                 </div>
-
                 <div class="col s7 pName">
                     <div class="row fnrow shortRow">
                         <div class="firstName flow-text">{{playerData.firstName}}</div>
@@ -22,10 +20,8 @@
                         <div class="capt flow-text"></div>
                     </div>
                 </div>
-
             </div>
             <div class="divider"></div>
-
             <div class="row shortRow">
                 <div class="statRow">
                     <div class="col s6 center-align flow-text">
@@ -38,7 +34,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="statRow">
                     <div class="col s4 center-align">
@@ -71,8 +66,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="card-reveal">
         <div class="row shortRow">
             <div class="col s11">
@@ -80,10 +73,8 @@
                     <div class="col s2">
                         <div class="playerNumber flow-text">{{playerData.jerseyNumber}}</div>
                     </div>
-
                     <div class="col s1">
                     </div>
-
                     <div class="col s9 pName">
                         <div class="row fnrow shortRow">
                             <div class="firstName flow-text">{{playerData.firstName}}</div>
@@ -99,7 +90,6 @@
                     <i class="material-icons center-align ">expand_more</i>
                 </div>
             </div>
-
         </div>
         <div class="divider"></div>
         <table class="statRow">
@@ -112,7 +102,6 @@
                     <th>Pt</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr>
                     <td>17-18</td>
@@ -128,20 +117,40 @@
                     <td>66</td>
                     <td>666</td>
                 </tr>
-
             </tbody>
         </table>
     </div>
 </div>
-
-
 {{!-- modal --}}
- <div id="modal{{playerData.id}}" class="modal">
+<div id="modal{{playerData.id}}" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>{{playerData.firstName}}</p>
+        <h4>{{playerData.firstName}} {{playerData.lastName}}</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col l6">
+                    <ul>
+                        <li><strong>Height:</strong> {{playerData.height}}</li>
+                        <li><strong>Weight:</strong> {{playerData.weight}}</li>
+                        <li><strong>Primary Position:</strong> {{playerData.officialPosition}}</li>
+                        <li><strong>Jersey Number:</strong> {{playerData.jerseyNumber}}</li>
+                        <li><strong>Birth Date:</strong> {{playerData.birthDate}}</li>
+                        <li><strong>Age: </strong>{{playerData.age}}</li>
+                    </ul>
+                </div>
+                <div class="col l6">
+                    <ul>
+                        <li><strong>Current Injuries:</strong> {{playerData.currentInjury}}</li>
+                        <li><strong>Birth City: </strong>{{playerData.birthCity}}</li>
+                        <li><strong>Birth Country:</strong> {{playerData.birthCountry}}</li>
+                        <li><strong>Twitter: </strong>{{playerData.twitter}}</li>
+                        <li><strong>College:</strong> {{playerData.college}}</li>
+                        <li><strong>Rookie?:</strong> {{playerData.rookie}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" class="modal-close waves-effect waves btn-flat">Close</a>
     </div>
-  </div>
+</div>
