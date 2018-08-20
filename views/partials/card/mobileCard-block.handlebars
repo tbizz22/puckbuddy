@@ -1,17 +1,17 @@
-<div class="card hide-on-large-only">
-    <div class="card-content">
-        <div class="row">
-            <div class="col">
-                <div class="playerNumber">{{playerData.jerseyNumber}}</div>
+<div class="card mobileCard center-align hide-on-large-only">
+    <a class="card-content center-align modal-trigger" data-target="modal{{playerData.id}}">
+        <div class="row center-align">
+            <div class="center-align">
+                <div class="playerNumberMobile center-align black-text">{{playerData.jerseyNumber}}</div>
             </div>
         </div>
-        <div class="row">
+        <div class="row black-text center-align">
             <div class="firstName">
                 {{playerData.firstName}}
             </div>
-            <div class="lastNname">
+            <div class=" black-text lastNname">
                 {{playerData.lastName}}
             </div>
         </div>
-    </div>
+    </a>
 </div>
