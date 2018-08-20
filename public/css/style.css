@@ -88,3 +88,22 @@ body {
   .pbLogo{
       max-height: 55px;
   }
+
+  .blackText {
+      color: black;
+  }
+
+  .mobileCard {
+      max-height: 150px;
+      min-height: 150px;
+      min-width: 100px;
+      max-width: 100px
+
+  }
+
+  .playerNumberMobile {
+    font-weight: 800;
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
