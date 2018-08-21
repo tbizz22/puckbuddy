@@ -125,7 +125,17 @@ body {
     width: 100%;
   }
   
+  .sticky1 {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+  }
+  
   .sticky + .content {
+    padding-top: 102px;
+  }
+
+  .sticky1 + .content {
     padding-top: 102px;
   }
 

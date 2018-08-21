@@ -15,15 +15,32 @@ $(document).ready(function () {
 
 
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function () {
+    tabs();
+    shortcut();
+};
 
 var header = document.getElementById("myTabs");
 var sticky = header.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+function tabs() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
+
+
+
+
+var shortcuts = document.getElementsByClassName("shortCuts");
+var sticky1 = shortcuts.offsetTop;
+
+function shortcut() {
+    if (window.pageYOffset > sticky1 -50) {
+        header.classList.add("sticky1");
+    } else {
+        header.classList.remove("sticky1");
+    }
 }
