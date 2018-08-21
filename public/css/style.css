@@ -142,3 +142,11 @@ body {
   .zno {
       z-index: -1;
   }
+
+
+  /* logo color */
+  .logoColor {
+      color: #f95428;
+      font-family: 'Nunito Sans';
+      font-weight: 800
+  }
