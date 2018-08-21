@@ -1,6 +1,6 @@
 const moment = require('moment');
 
-var demoDate = "20180109"
+var demoDate = "20180113"
 var date = moment.utc(demoDate).format("YYYYMMDD")
 
 const pb = {
@@ -11,7 +11,7 @@ const pb = {
     "dates": {
         "Season": "2017-2018-regular",
         "Date": date,
-        "searchDate": "20180110"
+        "searchDate": "20180114"
     },
     "teams": {
         29: "../images/ducks.gif",
