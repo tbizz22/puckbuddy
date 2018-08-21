@@ -1,4 +1,5 @@
 // htmlRoutes.js
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const btoa = require('btoa');
 const db = require("../models");
@@ -11,6 +12,11 @@ const request = require("request");
 const token = pbConfig.credentials.token;
 const password = pbConfig.credentials.password;
 const encode = btoa(token + ":" + password);
+
+
+// require
+axios = require("axios");
+
 
 
 
@@ -57,9 +63,34 @@ module.exports = function (app) {
 
         // get player data direct from API        
         var id = req.params.id;
+        var split = id.split("")
         var season = pbConfig.dates.Season;
         var url = "https://api.mysportsfeeds.com/v2.0/pull/nhl/"
         var qURL = url + season + "/games/" + id + "/lineup.json"
+        var fullPlyrObj = {}
+        var playerUrl = "https://api.mysportsfeeds.com/v2.0/pull/nhl/players.json?team=" + split[1] + "," + split[2];
+        var playerFullStats
+        
+        loadData()
+
+        function loadData() {
+            axios({
+                method: 'get',
+                url: playerUrl,
+                headers: {
+                    "Authorization": "Basic " + encode
+                }
+            }).then(function (response) {
+                console.log(response);
+                playerFullStats  = response.data                          
+                console.log(JSON.stringify(playerFullStats))
+            }).then(function () {
+                console.log("made it here too")
+                request(options, callback);
+            })
+
+
+        }
 
         var options = {
             url: qURL,
@@ -75,8 +106,8 @@ module.exports = function (app) {
                 // var game = setGame(mod.game);
                 var ht = setTeam(mod, 1);
                 var at = setTeam(mod, 0);
-               
-                res.render("game", {                    
+
+                res.render("game", {
                     ht: ht,
                     at: at
                 });
@@ -86,20 +117,12 @@ module.exports = function (app) {
                 console.log(response.statusCode);
             }
         }
-        request(options, callback);
+
 
     })
 }
 
 
-// function setGame(fullObject) {
-//     var fullObj = fullObject;
-
-//     gObj = {};
-
-//     return gObj
-
-// }
 
 
 function setTeam(fullObject, team) {
@@ -119,9 +142,9 @@ function setTeam(fullObject, team) {
     // enhance object with team info
 
     var teamData = fullObject.references.teamReferences;
-    
 
-    if (team === 0) {        
+
+    if (team === 0) {
         for (var t = 0; t < teamData.length; t++) {
             if (teamData[t].id === fullObj.game.awayTeam.id) {
                 currTeam = teamData[t]
