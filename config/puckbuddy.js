@@ -1,3 +1,8 @@
+const moment = require('moment');
+
+var demoDate = "20180109"
+var date = moment.utc(demoDate).format("YYYYMMDD")
+
 const pb = {
     "credentials": {
         "token": process.env.TOKEN,
@@ -5,7 +10,8 @@ const pb = {
     },
     "dates": {
         "Season": "2017-2018-regular",
-        "Date": "20180109"
+        "Date": date,
+        "searchDate": "20180110"
     },
     "teams": {
         29: "../images/ducks.gif",
