@@ -1,6 +1,9 @@
 .pt {
     padding-top: 20px;
 }
+.pt3 {
+    padding-top: 3px;
+}
 
 .mt40 {
     margin-top: 40px;
@@ -107,3 +110,35 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+/* sticky tabs */
+
+.content {
+    
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky1 {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 102px;
+  }
+
+  .sticky1 + .content {
+    padding-top: 102px;
+  }
+
+  .zno {
+      z-index: -1;
+  }

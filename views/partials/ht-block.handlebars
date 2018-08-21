@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col s12">
+<div class="row shortCuts">
+    <div class="col s12 ">
         <div class="center-align">
             Jump To: <span><a href="#forwards">Forwards</a></span> | <span><a href="#defense">Defense</a></span> |
             <span><a href="#goalies">Goal</a></span>
@@ -7,270 +7,272 @@
     </div>
 </div>
 {{!-- Forwards --}}
-<div id="forwards">
-    <h5>Forwards</h5>
-</div>
-<div class="col s12">
-    <div class="row" id="fl1">
-        <div class="center-align">1st Line</div>
+<div class="content zno">
+    <div id="forwards">
+        <h5>Forwards</h5>
+    </div>
+    <div class="col s12">
         <div class="row" id="fl1">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine1}}
-                            {{#if positionData.isLw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+            <div class="center-align">1st Line</div>
+            <div class="row" id="fl1">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine1}}
+                                {{#if positionData.isLw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine1}}
-                            {{#if positionData.isC}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine1}}
+                                {{#if positionData.isC}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine1}}
-                            {{#if positionData.isRw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine1}}
+                                {{#if positionData.isRw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
             </div>
         </div>
-    </div>
-    {{!-- forward line 2 --}}
-    <div class="row" id="fl2">
-        <div class="center-align">2nd Line</div>
+        {{!-- forward line 2 --}}
         <div class="row" id="fl2">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine2}}
-                            {{#if positionData.isLw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+            <div class="center-align">2nd Line</div>
+            <div class="row" id="fl2">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine2}}
+                                {{#if positionData.isLw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine2}}
+                                {{#if positionData.isC}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine2}}
+                                {{#if positionData.isRw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine2}}
-                            {{#if positionData.isC}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+        </div>
+        {{!-- forward line 3 --}}
+        <div class="row" id="fl3">
+            <div class="center-align">3rd Line</div>
+            <div class="row" id="fl1">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine3}}
+                                {{#if positionData.isLw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine3}}
+                                {{#if positionData.isC}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine3}}
+                                {{#if positionData.isRw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine2}}
-                            {{#if positionData.isRw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+        </div>
+        <div class="row" id="fl4">
+            <div class="center-align">4th Line</div>
+            <div class="row" id="fl1">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine4}}
+                                {{#if positionData.isLw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine4}}
+                                {{#if positionData.isC}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isForward}}
+                            {{#if positionData.isLine4}}
+                                {{#if positionData.isRw}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
         </div>
     </div>
-    {{!-- forward line 3 --}}
-    <div class="row" id="fl3">
-        <div class="center-align">3rd Line</div>
-        <div class="row" id="fl1">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine3}}
-                            {{#if positionData.isLw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+    {{!-- Grocery Stick --}}
+    {{!-- Defense --}}
+    <div>
+        <h5>Defense</h5>
+    </div>
+    <div id="defense" class="row center-align section scrollspy">
+        <div class="s12 col">
+            <div class="center-align">1st Pairing</div>
+            <div class="row" id="dp1">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine1}}
+                                {{#if positionData.isLd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine1}}
+                                {{#if positionData.isRd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine3}}
-                            {{#if positionData.isC}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+            <div class="center-align">2nd Pairing</div>
+            {{!-- D line 2 --}}
+            <div class="row" id="dp2">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine2}}
+                                {{#if positionData.isLd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine2}}
+                                {{#if positionData.isRd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine3}}
-                            {{#if positionData.isRw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
+            {{!-- dline3 --}}
+            <div class="center-align">3rd Pairing</div>
+            <div class="row" id="dp3">
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine3}}
+                                {{#if positionData.isLd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
                             {{/if}}
                         {{/if}}
-                    {{/if}}
-                {{/each}}
+                    {{/each}}
+                </div>
+                <div class="col l4">
+                    {{#each ht.lines}}
+                        {{#if positionData.isDefense}}
+                            {{#if positionData.isLine3}}
+                                {{#if positionData.isRd}}
+                                    {{> card/card-block}} {{> card/mobileCard-block}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
             </div>
         </div>
     </div>
-    <div class="row" id="fl4">
-        <div class="center-align">4th Line</div>
-        <div class="row" id="fl1">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine4}}
-                            {{#if positionData.isLw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine4}}
-                            {{#if positionData.isC}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isForward}}
-                        {{#if positionData.isLine4}}
-                            {{#if positionData.isRw}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-        </div>
+    {{!-- Goalies --}}
+    <div>
+        <h5>Goal</h5>
     </div>
-</div>
-{{!-- Grocery Stick --}}
-{{!-- Defense --}}
-<div>
-    <h5>Defense</h5>
-</div>
-<div id="defense" class="row center-align section scrollspy">
-    <div class="s12 col">
-        <div class="center-align">1st Pairing</div>
-        <div class="row" id="dp1">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine1}}
-                            {{#if positionData.isLd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine1}}
-                            {{#if positionData.isRd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-        </div>
-        <div class="center-align">2nd Pairing</div>
-        {{!-- D line 2 --}}
-        <div class="row" id="dp2">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine2}}
-                            {{#if positionData.isLd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine2}}
-                            {{#if positionData.isRd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-        </div>
-        {{!-- dline3 --}}
-        <div class="center-align">3rd Pairing</div>
-        <div class="row" id="dp3">
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine3}}
-                            {{#if positionData.isLd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-            <div class="col l4">
-                {{#each ht.lines}}
-                    {{#if positionData.isDefense}}
-                        {{#if positionData.isLine3}}
-                            {{#if positionData.isRd}}
-                                {{> card/card-block}} {{> card/mobileCard-block}}
-                            {{/if}}
-                        {{/if}}
-                    {{/if}}
-                {{/each}}
-            </div>
-        </div>
-    </div>
-</div>
-{{!-- Goalies --}}
-<div>
-    <h5>Goal</h5>
-</div>
-<div class="row section scrollspy" id="goalies">
-    <div class="col l4">
-        {{#each ht.lines}}
-            {{#if positionData.isSg}}
-                {{> card/card-block}} {{> card/mobileCard-block}}
-            {{/if}}
-        {{/each}}
-    </div>
-    <div class="row">
+    <div class="row section scrollspy" id="goalies">
         <div class="col l4">
             {{#each ht.lines}}
-                {{#if positionData.isBg}}
+                {{#if positionData.isSg}}
                     {{> card/card-block}} {{> card/mobileCard-block}}
                 {{/if}}
             {{/each}}
+        </div>
+        <div class="row">
+            <div class="col l4">
+                {{#each ht.lines}}
+                    {{#if positionData.isBg}}
+                        {{> card/card-block}} {{> card/mobileCard-block}}
+                    {{/if}}
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>
