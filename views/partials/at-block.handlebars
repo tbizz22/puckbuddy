@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row shortCuts">
     <div class="col s12 shortCuts">
         <div class="center-align">
-            Jump To: <span><a href="#aforwards">Forwards</a></span> | <span><a href="#adefense">Defense</a></span> |
+           <strong> Jump To:</strong> <span><a href="#aforwards">Forwards</a></span> | <span><a href="#adefense">Defense</a></span> |
             <span><a href="#agoalies">Goal</a></span>
         </div>
     </div>
@@ -10,10 +10,11 @@
 <div class="zno">
     <div id="aforwards">
         <h5>Forwards</h5>
+        <div class="divider"></div>
     </div>
     <div class="col s12">
         <div class="row" id="fl1">
-            <div class="center-align">1st Line</div>
+            <h6 class="center-align">1st Line</h6>
             <div class="row" id="fl1">
                 <div class="col l4">
                     {{#each at.lines}}
@@ -52,7 +53,7 @@
         </div>
         {{!-- forward line 2 --}}
         <div class="row" id="fl2">
-            <div class="center-align">2nd Line</div>
+            <h6 class="center-align">2nd Line</h6>
             <div class="row" id="fl2">
                 <div class="col l4">
                     {{#each at.lines}}
@@ -91,7 +92,7 @@
         </div>
         {{!-- forward line 3 --}}
         <div class="row" id="fl3">
-            <div class="center-align">3rd Line</div>
+            <h6 class="center-align">3rd Line</h6>
             <div class="row" id="fl1">
                 <div class="col l4">
                     {{#each at.lines}}
@@ -129,7 +130,7 @@
             </div>
         </div>
         <div class="row" id="fl4">
-            <div class="center-align">4th Line</div>
+            <h6 class="center-align">4th Line</h6>
             <div class="row" id="fl1">
                 <div class="col l4">
                     {{#each at.lines}}
@@ -171,12 +172,13 @@
     {{!-- Defense --}}
     <div>
         <h5>Defense</h5>
+        <div class="divider"></div>
     </div>
     <div id="adefense" class="row center-align section scrollspy">
         <div class="s12 col">
-            <div class="center-align">1st Pairing</div>
+            <h6 class="center-align">1st Pairing</h6>
             <div class="row" id="dp1">
-                <div class="col l4">
+                <div class="col offset-l2 offset-s2 l4">
                     {{#each at.lines}}
                         {{#if positionData.isDefense}}
                             {{#if positionData.isLine1}}
@@ -199,10 +201,10 @@
                     {{/each}}
                 </div>
             </div>
-            <div class="center-align">2nd Pairing</div>
+            <h6 class="center-align">2nd Pairing</h6>
             {{!-- D line 2 --}}
             <div class="row" id="dp2">
-                <div class="col l4">
+                <div class="col offset-l2 offset-s2 l4">
                     {{#each at.lines}}
                         {{#if positionData.isDefense}}
                             {{#if positionData.isLine2}}
@@ -226,9 +228,9 @@
                 </div>
             </div>
             {{!-- dline3 --}}
-            <div class="center-align">3rd Pairing</div>
+            <h6 class="center-align">3rd Pairing</h6>
             <div class="row" id="dp3">
-                <div class="col l4">
+                <div class="col offset-l2 offset-s2 l4">
                     {{#each at.lines}}
                         {{#if positionData.isDefense}}
                             {{#if positionData.isLine3}}
@@ -256,9 +258,10 @@
     {{!-- Goalies --}}
     <div>
         <h5>Goal</h5>
+        <div class="divider"></div>
     </div>
     <div class="row section scrollspy" id="agoalies">
-        <div class="col l4">
+        <div class="col offset-l2 offset-s2 l4">
             {{#each at.lines}}
                 {{#if positionData.isSg}}
                     {{> card/card-block}} {{> card/mobileCard-block}}
