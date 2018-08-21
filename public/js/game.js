@@ -15,9 +15,14 @@ $(document).ready(function () {
 
 
 
+
+
+
+// This fixes tabs at the top of the game page. Not able to have the cards working and fixed tabs at the same time
+
 window.onscroll = function () {
-    tabs();
-    shortcut();
+    // tabs();
+    // shortcut();
 };
 
 var header = document.getElementById("myTabs");
