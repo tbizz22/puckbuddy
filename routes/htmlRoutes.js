@@ -33,7 +33,6 @@ module.exports = function (app) {
                 GameDate: pbConfig.dates.searchDate
             }
         }).then(function (schedObj) {
-            console.log(schedObj)
             var mod = schedObj
 
             for (var i = 0; i < mod.length; i++) {
@@ -63,13 +62,14 @@ module.exports = function (app) {
 
         // get player data direct from API        
         var id = req.params.id;
-        var split = id.split("")
+        var split = id.split("-")
         var season = pbConfig.dates.Season;
         var url = "https://api.mysportsfeeds.com/v2.0/pull/nhl/"
         var qURL = url + season + "/games/" + id + "/lineup.json"
         var fullPlyrObj = {}
         var playerUrl = "https://api.mysportsfeeds.com/v2.0/pull/nhl/players.json?team=" + split[1] + "," + split[2];
         var playerFullStats
+
 
         loadData()
 
@@ -83,7 +83,6 @@ module.exports = function (app) {
             }).then(function (response) {
                 playerFullStats = response.data;
             }).then(function () {
-                console.log(JSON.stringify(playerFullStats));
                 request(options, callback);
             })
 
@@ -100,9 +99,10 @@ module.exports = function (app) {
         function callback(error, response, body) {
             if (!error && response.statusCode === 200) {
                 var mod = JSON.parse(body);
+                var pfs = playerFullStats
                 // var game = setGame(mod.game);
-                var ht = setTeam(mod, 1);
-                var at = setTeam(mod, 0);
+                var ht = setTeam(mod, 1, pfs);
+                var at = setTeam(mod, 0, pfs);
 
                 res.render("game", {
                     ht: ht,
@@ -122,9 +122,11 @@ module.exports = function (app) {
 
 
 
-function setTeam(fullObject, team) {
+function setTeam(fullObject, team, pfs) {
     var fullObj = fullObject;
     var tObj = {};
+    var playerFullStats = pfs;
+
     // add player references
     var ref = fullObject.references.playerReferences;
     // tObj.ref = ref;
@@ -160,7 +162,7 @@ function setTeam(fullObject, team) {
 
 
 
-    // enrich player data
+    // enrich player position data
 
     for (var i = 0; i < linesFeed.length; i++) {
         var player = linesFeed[i].player;
@@ -246,34 +248,194 @@ function setTeam(fullObject, team) {
 
 
         // set player id
-        playerID = player.id
+        if (player.id === null) {
+            playerID = null
+        } else {
+            playerID = player.id
+        }
 
         // enrich player object
 
-        for (var p = 0; p < ref.length; p++) {
-            if (ref[p].id === playerID) {
-                var id = ref[p].id
-                var firstName = ref[p].firstName
-                var lastName = ref[p].lastName
-                var officialPosition = ref[p].primaryPosition
-                var jerseyNumber = ref[p].jerseyNumber
-                var currentInjury = ref[p].currentInjury
-                var height = ref[p].height
-                var weight = ref[p].weight
-                var birthDate = ref[p].birthDate
-                var age = ref[p].age
-                var birthCity = ref[p].birthCity
-                var birthCountry = ref[p].birthCountry
-                var rookie = ref[p].rookie
-                var college = ref[p].college
-                var twitter = ref[p].twitter
-                var handedness = ref[p].handedness.shoots
+        for (var p = 0; p < playerFullStats.players.length; p++) {
+            var pfsCurr = playerFullStats.players[p].player
+            if (pfsCurr.id === playerID) {
+                console.log("found it")
+                var id = pfsCurr.id;
+                var firstName = pfsCurr.firstName;
+                var lastName = pfsCurr.lastName;
+                var officialPosition = pfsCurr.officialPosition;
+                var jerseyNumber = pfsCurr.jerseyNumber;
+                var currentInjury = pfsCurr.currentInjury;
+                var height = pfsCurr.height;
+                var weight = pfsCurr.weight;
+                var birthDate = pfsCurr.birthDate;
+                var age = pfsCurr.age;
+                var birthCity = pfsCurr.birthCity;
+                var birthCountry = pfsCurr.birthCountry;
+                var rookie = pfsCurr.rookie;
+                var college = pfsCurr.college;
+                var twitter = pfsCurr.twitter;
+                var handedness = pfsCurr.handedness;
+                var officialImageSrc = pfsCurr.officialImageSrc;
+                var socialMediaAccount = function (pfsCurr) {
+                    if (pfsCurr.socialMediaAccounts[0] == null) {
+                        return null
+                    } else {
+                        console.log(pfsCurr.socialMediaAccounts[0].value)
+                        return pfsCurr.socialMediaAccounts[0].value
+                    }
+                };
+                var seasonStartYear = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.seasonStartYear == null) {
+                        return "2017"
+                    } else {
+                        return pfsCurr.currentContractYear.seasonStartYear
+                    }
+                };
+                var baseSalary = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.baseSalary == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.baseSalary
+                    }
+                };
+                var minorsSalary = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.minorsSalary == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.minorsSalary
+                    }
+                };
+                var signingBonus = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.signingBonus == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.signingBonus
+                    }
+                };
+                var otherBonuses = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.otherBonuses == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.otherBonuses;
+                    }
+                };
+                
+                var capHit = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.capHit == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.capHit;
+                    }
+                };
+                var fullNoTradeClause = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.fullNoTradeClause == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.fullNoTradeClause;
+                    }
+                };
+                var modifiedNoTradeClause = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.modifiedNoTradeClause == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.modifiedNoTradeClause;
+                    }
+                };
+                var noMovementClause = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.noMovementClause == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.noMovementClause;
+                    }
+                };
+                var overallTotalYears = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.overallContract.overallTotalYears == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.overallContract.overallTotalYearss;
+                    }
+                };
+                var overallTotalSalary = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.overallContract.overallTotalSalary == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.overallContract.overallTotalSalary;
+                    }
+                };
+                var overallTotalBonuses = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.overallContract.overallTotalBonuses == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.overallContract.overallTotalBonuses;
+                    }
+                };
+                var overallExpiryStatus = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.overallContract.overallExpiryStatus == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.overallContract.overallExpiryStatus;
+                    }
+                };
+                var overallAnnualAverageSalary = function (pfsCurr) {
+                    if (pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary == null) {
+                        return "1"
+                    } else {
+                        return pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary;
+                    }
+                };
+                var draftYear = function (pfsCurr) {
+                    if (pfsCurr.drafted.year == null) {
+                        return "Undrafted"
+                    } else {
+                        return pfsCurr.drafted.year;
+                    }
+                };
+                var draftTeam = function (pfsCurr) {
+                    if (pfsCurr.drafted.team.id == null) {
+                        return "Undrafted"
+                    } else {
+                        return pfsCurr.drafted.team.id;
+                    }
+                };
+                var draftRound = function (pfsCurr) {
+                    if (pfsCurr.drafted.round == null) {
+                        return "Undrafted"
+                    } else {
+                        return pfsCurr.drafted.round;
+                    }
+                };
+                var draftPick = function (pfsCurr) {
+                    if (pfsCurr.drafted.roundPick == null) {
+                        return "Undrafted"
+                    } else {
+                        return pfsCurr.drafted.roundPick;
+                    }
+                };
+                var draftOverall = function (pfsCurr) {
+                    if (pfsCurr.drafted.overalPick == null) {
+                        return "Undrafted"
+                    } else {
+                        return pfsCurr.drafted.overalPick;
+                    }
+                };
+                var extPlayerID = function (pfsCurr) {
+                    if (pfsCurr.externalMappings[0].id == null) {
+                        return "Missing Data"
+                    } else {
+                        return pfsCurr.externalMappings[0].id;
+                    }
+                }
             }
         }
 
+
+
         //    add players to object
         var posDataCurrIterator = new PositionData(playerType, line, pos, playerID, isForward, isDefense, isGoalie, isLine1, isLine2, isLine3, isLine4, isLw, isC, isRw, isLd, isRd, isSg, isBg)
-        var playerDataCurrIterator = new PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness)
+        var playerDataCurrIterator = new PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness, officialImageSrc,
+            socialMediaAccount, seasonStartYear, baseSalary, minorsSalary, signingBonus, otherBonuses, capHit, fullNoTradeClause, modifiedNoTradeClause, noMovementClause, overallTotalYears, overallTotalSalary, overallTotalBonuses,
+            overallExpiryStatus, overallAnnualAverageSalary, draftYear, draftTeam, draftRound, draftPick, draftOverall, extPlayerID)
 
 
         var tempObj = {};
@@ -318,7 +480,9 @@ function PositionData(playerType, line, position, id, isForward, isDefense, isGo
 };
 
 
-function PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness) {
+function PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, currentInjury, height, weight, birthDate, age, birthCity, birthCountry, rookie, college, twitter, handedness, officialImageSrc,
+    socialMediaAccount, seasonStartYear, baseSalary, minorsSalary, signingBonus, otherBonuses, capHit, fullNoTradeClause, modifiedNoTradeClause, noMovementClause, overallTotalYears, overallTotalSalary, overallTotalBonuses,
+    overallExpiryStatus, overallAnnualAverageSalary, draftYear, draftTeam, draftRound, draftPick, draftOverall, extPlayerID) {
     this.id = id,
         this.firstName = firstName,
         this.lastName = lastName,
@@ -334,5 +498,32 @@ function PlayerData(id, firstName, lastName, officialPosition, jerseyNumber, cur
         this.rookie = rookie,
         this.college = college,
         this.twitter = twitter,
-        this.handedness = handedness
-};
+        this.handedness = handedness,
+        this.officialImageSrc = officialImageSrc,
+        this.socialMediaAccount = socialMediaAccount,
+
+        this.seasonStartYear = seasonStartYear,
+        this.baseSalary = baseSalary,
+        this.minorsSalary = minorsSalary,
+        this.signingBonus = signingBonus,
+        this.otherBonuses = otherBonuses,
+        this.capHit = capHit,
+        this.fullNoTradeClause = fullNoTradeClause,
+        this.modifiedNoTradeClause = modifiedNoTradeClause,
+        this.noMovementClause = noMovementClause,
+
+        this.overallTotalYears = overallTotalYears,
+        this.overallTotalSalary = overallTotalSalary,
+        this.overallTotalBonuses = overallTotalBonuses,
+        this.overallExpiryStatus = overallExpiryStatus,
+        this.overallAnnualAverageSalary = overallAnnualAverageSalary,
+
+        this.draftYear = draftYear,
+        this.draftTeam = draftTeam,
+        this.draftRound = draftRound,
+        this.draftPick = draftPick,
+        this.draftOverall = draftOverall,
+
+        this.extPlayerID = extPlayerID
+
+}
