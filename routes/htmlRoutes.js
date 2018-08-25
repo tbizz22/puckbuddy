@@ -93,10 +93,11 @@ module.exports = function (app) {
             url: qURL,
             headers: {
                 "Authorization": "Basic " + encode
-            }
+            }            
         };
 
         function callback(error, response, body) {
+            console.log(qURL)
             if (!error && response.statusCode === 200) {
                 var mod = JSON.parse(body);
                 var pfs = playerFullStats
@@ -248,7 +249,7 @@ function setTeam(fullObject, team, pfs) {
 
 
         // set player id
-        if (player.id === null) {
+        if (player == null) {
             playerID = null
         } else {
             playerID = player.id
@@ -258,8 +259,7 @@ function setTeam(fullObject, team, pfs) {
 
         for (var p = 0; p < playerFullStats.players.length; p++) {
             var pfsCurr = playerFullStats.players[p].player
-            if (pfsCurr.id === playerID) {
-                console.log("found it")
+            if (pfsCurr.id === playerID) {                
                 var id = pfsCurr.id;
                 var firstName = pfsCurr.firstName;
                 var lastName = pfsCurr.lastName;
