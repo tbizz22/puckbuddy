@@ -70,7 +70,7 @@ module.exports = function (app) {
         var fullPlyrObj = {}
         var playerUrl = "https://api.mysportsfeeds.com/v2.0/pull/nhl/players.json?team=" + split[1] + "," + split[2];
         var playerFullStats
-        
+
         loadData()
 
         function loadData() {
@@ -81,11 +81,9 @@ module.exports = function (app) {
                     "Authorization": "Basic " + encode
                 }
             }).then(function (response) {
-                console.log(response);
-                playerFullStats  = response.data                          
-                console.log(JSON.stringify(playerFullStats))
+                playerFullStats = response.data;
             }).then(function () {
-                console.log("made it here too")
+                console.log(JSON.stringify(playerFullStats));
                 request(options, callback);
             })
 
@@ -102,7 +100,6 @@ module.exports = function (app) {
         function callback(error, response, body) {
             if (!error && response.statusCode === 200) {
                 var mod = JSON.parse(body);
-
                 // var game = setGame(mod.game);
                 var ht = setTeam(mod, 1);
                 var at = setTeam(mod, 0);
