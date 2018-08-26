@@ -16,6 +16,12 @@
 </div>
 {{!-- hb block here --}}
 <div class="container">
+{{!-- loader hidden by default --}}
+    <div id="load" class="center-align hide">
+        {{>load-block}}
+    </div>
+
+
     <ul class="collapsible popout" id="games">
         {{#each schedule}}
             <li>

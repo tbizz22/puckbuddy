@@ -16,5 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+$(".gameButton").on("click", function() {
+    
+    $("#games").addClass("hide");
+    $("#load").removeClass("hide")
+})
 
 
