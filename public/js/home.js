@@ -23,3 +23,15 @@ $(".gameButton").on("click", function() {
 })
 
 
+var dateTime = null;
+var date = null;
+
+var update = function() {
+  date = moment(new Date())
+  dateTime.html(date.format("dddd, MMMM Do YYYY"));
+};
+
+$(document).ready(function(){
+  dateTime=$("#dateTime");
+  update();  
+})

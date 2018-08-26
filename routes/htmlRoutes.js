@@ -1,5 +1,5 @@
 // htmlRoutes.js
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 
 const btoa = require('btoa');
 const db = require("../models");
@@ -15,8 +15,8 @@ const encode = btoa(token + ":" + password);
 
 
 // require
-axios = require("axios");
 
+axios = require("axios");
 
 
 
@@ -28,6 +28,7 @@ module.exports = function (app) {
     // Load index page
 
     app.get("/", function (req, res) {
+       
         db.Game.findAll({
             where: {
                 GameDate: pbConfig.dates.searchDate
