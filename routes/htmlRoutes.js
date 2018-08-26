@@ -114,6 +114,7 @@ module.exports = function (app) {
             } else {
                 console.log(error);
                 console.log(response.statusCode);
+                res.render("404")
             }
         }
 
