@@ -263,7 +263,7 @@ function setTeam(fullObject, team, pfs) {
                 var id = pfsCurr.id;
                 var firstName = pfsCurr.firstName;
                 var lastName = pfsCurr.lastName;
-                var officialPosition = pfsCurr.officialPosition;
+                var officialPosition = pfsCurr.primaryPosition;
                 var jerseyNumber = pfsCurr.jerseyNumber;
                 var currentInjury = pfsCurr.currentInjury;
                 var height = pfsCurr.height;
