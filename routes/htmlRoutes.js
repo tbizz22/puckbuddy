@@ -108,7 +108,8 @@ module.exports = function (app) {
 
                 res.render("game", {
                     ht: ht,
-                    at: at
+                    at: at,
+                    layout:"game-layout"
                 });
 
             } else {
