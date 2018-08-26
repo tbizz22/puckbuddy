@@ -277,8 +277,10 @@ function setTeam(fullObject, team, pfs) {
                 var twitter = pfsCurr.twitter;
                 var handedness = pfsCurr.handedness;
                 var officialImageSrc = pfsCurr.officialImageSrc;
-                var socialMediaAccount = function (pfsCurr) {
-                    if (pfsCurr.socialMediaAccounts[0] == null) {
+                var socialMediaAccount = setSocialMedia(pfsCurr)
+                
+                function  setSocialMedia(pfsCurr) {
+                    if (pfsCurr.socialMediaAccounts.length == 0) {
                         return null
                     } else {
                         console.log(pfsCurr.socialMediaAccounts[0].value)
@@ -294,28 +296,28 @@ function setTeam(fullObject, team, pfs) {
                 };
                 var baseSalary = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.baseSalary == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.baseSalary
                     }
                 };
                 var minorsSalary = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.minorsSalary == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.minorsSalary
                     }
                 };
                 var signingBonus = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.signingBonus == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.signingBonus
                     }
                 };
                 var otherBonuses = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.otherBonuses == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.otherBonuses;
                     }
@@ -323,63 +325,63 @@ function setTeam(fullObject, team, pfs) {
                 
                 var capHit = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.capHit == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.capHit;
                     }
                 };
                 var fullNoTradeClause = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.fullNoTradeClause == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.fullNoTradeClause;
                     }
                 };
                 var modifiedNoTradeClause = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.modifiedNoTradeClause == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.modifiedNoTradeClause;
                     }
                 };
                 var noMovementClause = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.noMovementClause == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.noMovementClause;
                     }
                 };
                 var overallTotalYears = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.overallContract.overallTotalYears == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalYearss;
                     }
                 };
                 var overallTotalSalary = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.overallContract.overallTotalSalary == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalSalary;
                     }
                 };
                 var overallTotalBonuses = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.overallContract.overallTotalBonuses == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalBonuses;
                     }
                 };
                 var overallExpiryStatus = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.overallContract.overallExpiryStatus == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallExpiryStatus;
                     }
                 };
                 var overallAnnualAverageSalary = function (pfsCurr) {
                     if (pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary == null) {
-                        return "1"
+                        return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary;
                     }
@@ -412,11 +414,11 @@ function setTeam(fullObject, team, pfs) {
                         return pfsCurr.drafted.roundPick;
                     }
                 };
-                var draftOverall = function (pfsCurr) {
-                    if (pfsCurr.drafted.overalPick == null) {
-                        return "Undrafted"
+                var draftOverall = function(pfsCurr) {
+                    if (pfsCurr.drafted == null) {
+                        return null
                     } else {
-                        return pfsCurr.drafted.overalPick;
+                        return pfsCurr.drafted.overallPick;
                     }
                 };
                 var extPlayerID = function (pfsCurr) {
@@ -441,7 +443,7 @@ function setTeam(fullObject, team, pfs) {
         var tempObj = {};
         tempObj.positionData = posDataCurrIterator;
         tempObj.playerData = playerDataCurrIterator;
-        // console.log(playerDataCurrIterator)
+        console.log(playerDataCurrIterator)
         lines.push(tempObj);
         tObj.lines = lines;
     }
