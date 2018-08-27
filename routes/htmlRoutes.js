@@ -50,6 +50,7 @@ module.exports = function (app) {
             });
         }).catch(function (err) {
             res.json(err);
+            res.render("404");
         });
     });
 
@@ -447,9 +448,9 @@ function setTeam(fullObject, team, pfs) {
         tempObj.playerData = playerDataCurrIterator;
         console.log(playerDataCurrIterator)
         lines.push(tempObj);
-        tObj.lines = lines;
+        
     }
-
+    tObj.lines = lines;
     return tObj;
 }
 
