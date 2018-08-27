@@ -390,28 +390,28 @@ function setTeam(fullObject, team, pfs) {
                     }
                 };
                 var draftYear = function (pfsCurr) {
-                    if (pfsCurr.drafted.year == null) {
+                    if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.year;
                     }
                 };
                 var draftTeam = function (pfsCurr) {
-                    if (pfsCurr.drafted.team.id == null) {
+                    if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.team.id;
                     }
                 };
                 var draftRound = function (pfsCurr) {
-                    if (pfsCurr.drafted.round == null) {
+                    if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.round;
                     }
                 };
                 var draftPick = function (pfsCurr) {
-                    if (pfsCurr.drafted.roundPick == null) {
+                    if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.roundPick;
