@@ -106,7 +106,7 @@ module.exports = function (app) {
                 // var game = setGame(mod.game);
                 var ht = setTeam(mod, 1, pfs);
                 var at = setTeam(mod, 0, pfs);
-
+                
                 res.render("game", {
                     ht: ht,
                     at: at,
@@ -454,7 +454,7 @@ function setTeam(fullObject, team, pfs) {
                 
                 function setDraftYear(pfsCurr) {
                     if (pfsCurr.drafted == null) {
-                        return "Undrafted"
+                        return "0"
                     } else {
                         return pfsCurr.drafted.year;
                     }
@@ -463,7 +463,7 @@ function setTeam(fullObject, team, pfs) {
                 
                 function setDraftTeam(pfsCurr) {
                     if (pfsCurr.drafted == null) {
-                        return "Undrafted"
+                        return "0"
                     } else {
                         return pfsCurr.drafted.team.id;
                     }
@@ -472,7 +472,7 @@ function setTeam(fullObject, team, pfs) {
                 
                 function setDraftRound(pfsCurr) {
                     if (pfsCurr.drafted == null) {
-                        return "Undrafted"
+                        return "0"
                     } else {
                         return pfsCurr.drafted.round;
                     }
@@ -481,7 +481,7 @@ function setTeam(fullObject, team, pfs) {
                 
                 function setDraftPick(pfsCurr) {
                     if (pfsCurr.drafted == null) {
-                        return "Undrafted"
+                        return "0"
                     } else {
                         return pfsCurr.drafted.roundPick;
                     }
@@ -490,7 +490,7 @@ function setTeam(fullObject, team, pfs) {
                 
                 function setDraftOverall(pfsCurr) {
                     if (pfsCurr.drafted == null) {
-                        return null
+                        return "0"
                     } else {
                         return pfsCurr.drafted.overallPick;
                     }
