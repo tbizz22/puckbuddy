@@ -139,8 +139,8 @@
                     <div class="col s12">
                         <ul class="tabs">
                             <li class="tab col s3"><a href="#general{{playerData.id}}" class="active">General</a></li>
-                            <li class="tab col s3 {{#if playerData.drafted}}{{else}}disabled{{/if}}"><a href="#draft{{playerData.id}}">Draft</a></li>
-                            <li class="tab col s3 {{#if playerData.contract}}{{else}}disabled{{/if}}"><a href="#contract{{playerData.id}}">Contract</a></li>
+                            <li class="tab col s3 {{#if playerData.draftOverall}}{{else}}disabled{{/if}}"><a href="#draft{{playerData.id}}">Draft</a></li>
+                            <li class="tab col s3 {{#if playerData.baseSalary}}{{else}}disabled{{/if}}"><a href="#contract{{playerData.id}}">Contract</a></li>
                             <li class="tab col s3 {{#if playerData.socialMediaAccount}}{{else}}disabled{{/if}}"><a href="#social{{playerData.id}}">Social</a></li>
                         </ul>
                     </div>
@@ -148,7 +148,7 @@
                         <div id="general{{playerData.id}}" class="col s12">
                             <div class="row">
                                 <div class="p10">
-                                    <div class="col l6">
+                                    <div class="col left-align l6">
                                         <ul>
                                             <li><strong>Birth Date:</strong> {{playerData.birthDate}}</li>
                                             <li><strong>Age: </strong>{{playerData.age}}</li>
@@ -157,12 +157,17 @@
                                             <li><strong>Birth Country:</strong> {{playerData.birthCountry}}</li>
                                         </ul>
                                     </div>
-                                    <div class="col l6">
+                                    <div class="col left-align l6">
                                         <ul>
                                             <li><strong>Twitter: </strong>{{playerData.twitter}}</li>
-                                            <li><strong>College:</strong> {{playerData.college}}</li>
-                                            <li><strong>Rookie?:</strong> {{playerData.rookie}}</li>
+                                            <li><strong>College: </strong> {{playerData.college}}</li>
+                                            <li><strong>Rookie: </strong> {{playerData.rookie}}</li>
                                         </ul>
+                                    </div>
+
+                                    <div class="col l12">
+                                        <a href="https://www.nhl.com/player/{{playerData.extPlayerID}}" target="_blank">View
+                                            NHL Player Profile</a>
                                     </div>
                                 </div>
                             </div>
@@ -171,20 +176,20 @@
                     <div id="draft{{playerData.id}}" class="col s12">
                         <div class="row">
                             <div class="p10">
-                                {{#if playerData.drafted}}
-                                    <div class="col l6">
-                                        <ul>
-                                            <li><strong>Draft Year:</strong> {{playerData.drafted.draftYear}}</li>
-                                            <li><strong>Draft Team:</strong> {{playerData.draftTeam}}</li>
-                                            <li><strong>Overall:</strong> {{playerData.draftOverall}}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col l6">
-                                        <ul>
-                                            <li><strong>Round Picked:</strong> {{playerData.draftRound}}</li>
-                                            <li><strong>Round Pick #:</strong> {{playerData.draftPick}}</li>
-                                        </ul>
-                                    </div>
+                                {{#if playerData.draftOverall}}
+                                <div class="col l6">
+                                    <ul>
+                                        <li><strong>Draft Year: </strong> {{playerData.draftYear}}</li>
+                                        <li><strong>Draft Team: </strong> {{playerData.draftTeam}}</li>
+                                        <li><strong>Overall: </strong> {{playerData.draftOverall}}</li>
+                                    </ul>
+                                </div>
+                                <div class="col l6">
+                                    <ul>
+                                        <li><strong>Round Picked: </strong> {{playerData.draftRound}}</li>
+                                        <li><strong>Round Pick #: </strong> {{playerData.draftPick}}</li>
+                                    </ul>
+                                </div>
                                 {{/if}}
                             </div>
                         </div>
@@ -192,18 +197,26 @@
                     <div id="contract{{playerData.id}}" class="col s12">
                         <div class="row">
                             <div class="p10">
-                                {{#if playerData.contract}}
-                                    <div class="col l6">
-                                        <ul>
-                                            <div>Current Year:</div>
-                                            <li><strong>Draft Year:</strong> {{playerData.overallTotalYears}}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col l6">
-                                        <ul>
-                                            <div>Total Contract:</div>
-                                        </ul>
-                                    </div>
+                                {{#if playerData.baseSalary}}
+                                <div class="col l6">
+                                    <div><strong>Current Year:</strong></div>
+                                    <ul>
+
+                                        <li><strong>Base Salary:</strong> {{playerData.baseSalary}}</li>
+                                        <li><strong>Minor Salary:</strong> {{playerData.minorsSalary}}</li>
+                                        <li><strong>Signing Bonus:</strong> {{playerData.signingBonus}}</li>
+                                        <li><strong>NTC:</strong> {{playerData.fullNoTradeClause}}</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col l6">
+                                    <div><strong>Total Contract:</strong></div>
+                                    <ul>
+                                        <li><strong>Total Years:</strong> {{playerData.overallTotalYears}}</li>
+                                        <li><strong>Total Salary:</strong> {{playerData.overallTotalSalary}}</li>
+                                        <li><strong>Overall Annual Average Salary:</strong> {{playerData.overallAnnualAverageSalary}}</li>
+                                    </ul>
+                                </div>
                                 {{/if}}
                             </div>
                         </div>
@@ -211,7 +224,8 @@
                     <div id="social{{playerData.id}}" class="col s12">
                         <a class="twitter-timeline" data-height="400" href="https://twitter.com/{{playerData.socialMediaAccount}}?ref_src=twsrc%5Etfw">Tweets
                             by {{playerData.socialMediaAccount}}</a>
-                        {{!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> --}}
+                        {{!--
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> --}}
                     </div>
                 </div>
             </div>

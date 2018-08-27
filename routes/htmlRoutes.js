@@ -300,6 +300,7 @@ function setTeam(fullObject, team, pfs) {
                 var overallTotalSalary = setOverallTotalSalary(pfsCurr)
                 var overallExpiryStatus = setOverallExpiryStatus(pfsCurr)
                 var overallAnnualAverageSalary = setOverallAnnualAverageSalary(pfsCurr)
+                var draftYear = setDraftYear(pfsCurr)
 
                 function setSocialMedia(pfsCurr) {
                     if (pfsCurr.socialMediaAccounts.length == 0) {
@@ -450,7 +451,7 @@ function setTeam(fullObject, team, pfs) {
                         return pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary;
                     }
                 };
-                var draftYear = setDraftYear(pfsCurr)
+                
                 
                 function setDraftYear(pfsCurr) {
                     if (pfsCurr.drafted == null) {
@@ -465,7 +466,7 @@ function setTeam(fullObject, team, pfs) {
                     if (pfsCurr.drafted == null) {
                         return "0"
                     } else {
-                        return pfsCurr.drafted.team.id;
+                        return pfsCurr.drafted.team.abbreviation;
                     }
                 };
               
