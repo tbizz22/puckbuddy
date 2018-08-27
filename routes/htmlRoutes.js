@@ -28,7 +28,7 @@ module.exports = function (app) {
     // Load index page
 
     app.get("/", function (req, res) {
-       
+
         db.Game.findAll({
             where: {
                 GameDate: pbConfig.dates.searchDate
@@ -95,7 +95,7 @@ module.exports = function (app) {
             url: qURL,
             headers: {
                 "Authorization": "Basic " + encode
-            }            
+            }
         };
 
         function callback(error, response, body) {
@@ -110,7 +110,7 @@ module.exports = function (app) {
                 res.render("game", {
                     ht: ht,
                     at: at,
-                    layout:"game-layout"
+                    layout: "game-layout"
                 });
 
             } else {
@@ -263,7 +263,7 @@ function setTeam(fullObject, team, pfs) {
 
         for (var p = 0; p < playerFullStats.players.length; p++) {
             var pfsCurr = playerFullStats.players[p].player
-            if (pfsCurr.id === playerID) {                
+            if (pfsCurr.id === playerID) {
                 var id = pfsCurr.id;
                 var firstName = pfsCurr.firstName;
                 var lastName = pfsCurr.lastName;
@@ -282,8 +282,26 @@ function setTeam(fullObject, team, pfs) {
                 var handedness = pfsCurr.handedness;
                 var officialImageSrc = pfsCurr.officialImageSrc;
                 var socialMediaAccount = setSocialMedia(pfsCurr)
-                
-                function  setSocialMedia(pfsCurr) {
+                var seasonStartYear = setSeasonStartYear(pfsCurr)
+                var baseSalary = setBaseSalary(pfsCurr)
+                var minorsSalary = setMinorsSalary(pfsCurr)
+                var signingBonus = setSigningBonus(pfsCurr)
+                var otherBonuses = setOtherBonuses(pfsCurr)
+                var capHit = setCapHit(pfsCurr)
+                var fullNoTradeClause = setFullNoTradeClause(pfsCurr)
+                var modifiedNoTradeClause = setModifiedNoTradeClause(pfsCurr)
+                var noMovementClause = setNoMovementClause(pfsCurr)
+                var overallTotalYears = setOverallTotalYears(pfsCurr)
+                var draftOverall = setDraftOverall(pfsCurr)
+                var extPlayerID =  setExtPlayerID(pfsCurr)
+                var draftPick = setDraftPick(pfsCurr)
+                var draftRound = setDraftRound(pfsCurr)
+                var overallTotalBonuses = setOverallTotalBonuses(pfsCurr)
+                var overallTotalSalary = setOverallTotalSalary(pfsCurr)
+                var overallExpiryStatus = setOverallExpiryStatus(pfsCurr)
+                var overallAnnualAverageSalary = setOverallAnnualAverageSalary(pfsCurr)
+
+                function setSocialMedia(pfsCurr) {
                     if (pfsCurr.socialMediaAccounts.length == 0) {
                         return null
                     } else {
@@ -291,141 +309,195 @@ function setTeam(fullObject, team, pfs) {
                         return pfsCurr.socialMediaAccounts[0].value
                     }
                 };
-                var seasonStartYear = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.seasonStartYear == null) {
+
+
+                function setSeasonStartYear(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "2017"
                     } else {
                         return pfsCurr.currentContractYear.seasonStartYear
                     }
                 };
-                var baseSalary = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.baseSalary == null) {
+
+
+                function setBaseSalary(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.baseSalary
                     }
                 };
-                var minorsSalary = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.minorsSalary == null) {
+
+
+
+                function setMinorsSalary(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.minorsSalary
                     }
                 };
-                var signingBonus = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.signingBonus == null) {
+
+
+                function setSigningBonus(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.signingBonus
                     }
                 };
-                var otherBonuses = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.otherBonuses == null) {
+
+
+                function setOtherBonuses(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.otherBonuses;
                     }
                 };
-                
-                var capHit = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.capHit == null) {
+
+
+
+                function setCapHit(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.capHit;
                     }
                 };
-                var fullNoTradeClause = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.fullNoTradeClause == null) {
+
+
+                function setFullNoTradeClause(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.fullNoTradeClause;
                     }
                 };
-                var modifiedNoTradeClause = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.modifiedNoTradeClause == null) {
+
+
+                function setModifiedNoTradeClause(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.modifiedNoTradeClause;
                     }
                 };
-                var noMovementClause = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.noMovementClause == null) {
+
+
+                function setNoMovementClause(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.noMovementClause;
                     }
                 };
-                var overallTotalYears = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.overallContract.overallTotalYears == null) {
+
+
+                function setOverallTotalYears(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
+                        return "0"
+                    } else if (pfsCurr.currentContractYear.overallContract == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalYearss;
                     }
                 };
-                var overallTotalSalary = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.overallContract.overallTotalSalary == null) {
+
+
+    
+
+                function setOverallTotalSalary(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
+                        return "0"
+                    } else if (pfsCurr.currentContractYear.overallContract == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalSalary;
                     }
                 };
-                var overallTotalBonuses = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.overallContract.overallTotalBonuses == null) {
+
+
+      
+                function setOverallTotalBonuses(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
+                        return "0"
+                    } else if (pfsCurr.currentContractYear.overallContract == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallTotalBonuses;
                     }
                 };
-                var overallExpiryStatus = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.overallContract.overallExpiryStatus == null) {
+                
+                
+                function setOverallExpiryStatus(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
+                        return "0"
+                    } else if (pfsCurr.currentContractYear.overallContract == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallExpiryStatus;
                     }
                 };
-                var overallAnnualAverageSalary = function (pfsCurr) {
-                    if (pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary == null) {
+                
+                
+                function setOverallAnnualAverageSalary(pfsCurr) {
+                    if (pfsCurr.currentContractYear == null) {
+                        return "0"
+                    } else if (pfsCurr.currentContractYear.overallContract == null) {
                         return "0"
                     } else {
                         return pfsCurr.currentContractYear.overallContract.overallAnnualAverageSalary;
                     }
                 };
-                var draftYear = function (pfsCurr) {
+                var draftYear = setDraftYear(pfsCurr)
+                
+                function setDraftYear(pfsCurr) {
                     if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.year;
                     }
                 };
-                var draftTeam = function (pfsCurr) {
+                var draftTeam = setDraftTeam(pfsCurr)
+                
+                function setDraftTeam(pfsCurr) {
                     if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.team.id;
                     }
                 };
-                var draftRound = function (pfsCurr) {
+              
+                
+                function setDraftRound(pfsCurr) {
                     if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.round;
                     }
                 };
-                var draftPick = function (pfsCurr) {
+                
+                
+                function setDraftPick(pfsCurr) {
                     if (pfsCurr.drafted == null) {
                         return "Undrafted"
                     } else {
                         return pfsCurr.drafted.roundPick;
                     }
                 };
-                var draftOverall = function(pfsCurr) {
+         
+                
+                function setDraftOverall(pfsCurr) {
                     if (pfsCurr.drafted == null) {
                         return null
                     } else {
                         return pfsCurr.drafted.overallPick;
                     }
                 };
-                var extPlayerID = function (pfsCurr) {
+                
+                
+                function setExtPlayerID(pfsCurr) {
                     if (pfsCurr.externalMappings[0].id == null) {
                         return "Missing Data"
                     } else {
@@ -449,7 +521,7 @@ function setTeam(fullObject, team, pfs) {
         tempObj.playerData = playerDataCurrIterator;
         console.log(playerDataCurrIterator)
         lines.push(tempObj);
-        
+
     }
     tObj.lines = lines;
     return tObj;
